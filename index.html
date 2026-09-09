@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="it">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0117)https://t90122041862.p.clickup-attachments.com/t90122041862/71b61722-9a20-4f17-8466-586c69b0c95c/index.html?view=open -->
+<html lang="it"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#F4F3F1">
 <!-- primo paint identico alla native splash: nessun flash bianco o nero -->
 <style>html{background:#F4F3F1;}html,body{-webkit-tap-highlight-color:transparent;}</style>
 <title>Portafoglio</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.44.0/tabler-icons.min.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,800&display=swap">
+<link rel="stylesheet" href="./Portafoglioqq_files/tabler-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link rel="stylesheet" href="./Portafoglioqq_files/css2">
 <style>
   :root{
     --font-display:'Iowan Old Style','Georgia','Palatino Linotype',serif;
@@ -1854,26 +1854,7 @@
   .poker-action-btn.bet{background:#1F6B3A;color:#FFFFFF;border:none;}
   .poker-action-btn.raise{background:#1F6B3A;color:#FFFFFF;border:none;}
 
-  /* ---------- livelli importo puntata + tastierino puntate condiviso ---------- */
-  .bet-level-tabs{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:8px;
-    margin-bottom:10px;
-  }
-  .bet-level-tab{
-    height:34px;
-    border-radius:10px;
-    border:1.5px solid var(--border);
-    background:transparent;
-    color:var(--text-muted);
-    font-family:var(--font-body);
-    font-size:12px;
-    font-weight:600;
-    cursor:pointer;
-    transition:border-color .15s ease, color .15s ease, background .15s ease;
-  }
-  .bet-level-tab.active{border-color:var(--accent);color:var(--accent);background:var(--fill-subtle);}
+  /* ---------- tastierino puntate condiviso ---------- */
 
   .bet-amount-tap{cursor:pointer;caret-color:transparent;}
 
@@ -2879,49 +2860,200 @@
   #gamesScreen #pokerTable .pk-actions .poker-action-btn.solo{grid-column:1 / -1;}
 
 
-  /* ================= UNIVERSAL CHIP BETTING DOCK ================= */
-  .uni-chip-dock{display:none;position:absolute;left:12px;right:12px;bottom:54px;z-index:30;padding:8px 10px 7px;border-radius:16px;background:rgba(18,33,27,.96);color:#F6F3EC;box-shadow:0 8px 22px rgba(0,0,0,.32),inset 0 0 0 1px rgba(201,162,39,.34);}
-  .uni-chip-dock.open{display:block;animation:uniDockIn .24s cubic-bezier(.2,.9,.25,1) both;}
-  @keyframes uniDockIn{from{opacity:0;transform:translate3d(0,12px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
-  .uni-dock-head{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:10px;color:rgba(246,243,236,.66);margin-bottom:5px;}
-  .uni-dock-head strong{font-family:var(--font-mono);font-size:15px;color:#F6F3EC;}
-  .uni-dock-head button{border:0;background:transparent;color:#C9A227;font-size:10px;cursor:pointer;padding:3px 0;}
-  .uni-dock-body{display:grid;grid-template-columns:74px 1fr;gap:8px;align-items:center;}
-  .uni-stack-zone{height:66px;position:relative;display:flex;align-items:center;justify-content:center;touch-action:none;}
-  .uni-stack{position:relative;width:54px;height:54px;transform:translate3d(0,0,0);will-change:transform;}
-  .uni-stack.empty{opacity:.2;}
-  .uni-stack-chip{position:absolute;left:0;bottom:0;width:46px;height:46px;}
-  .uni-stack-chip::before{inset:4px!important;}.uni-stack-chip::after{font-size:10px!important;}
-  .uni-drag-hint{position:absolute;bottom:-1px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:7.5px;color:rgba(246,243,236,.55);}
-  .uni-tray{display:flex;align-items:flex-end;justify-content:center;gap:3px;min-width:0;overflow-x:auto;scrollbar-width:none;padding:3px 0;}
-  .uni-tray::-webkit-scrollbar{display:none;}
-  .uni-slot{display:flex;flex:0 0 31px;flex-direction:column;align-items:center;gap:2px;}
-  .uni-chip{width:31px;height:31px;cursor:pointer;}.uni-chip::before{inset:3.5px;}.uni-chip::after{font-size:8px;}.uni-chip:active{transform:translate3d(0,2px,0) scale(.94);}
-  .uni-label{font:8px var(--font-mono);color:rgba(246,243,236,.62);}
-  .uni-hint{margin:4px 0 0;text-align:center;font-size:9px;color:rgba(246,243,236,.58);min-height:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-  .uni-flight{animation:uniFlight .46s cubic-bezier(.2,.8,.22,1) both;}
-  @keyframes uniFlight{from{transform:translate3d(var(--fx,0),var(--fy,0),0) rotate(var(--fr,0deg)) scale(1.18);opacity:.1}to{transform:translate3d(var(--tx,0),var(--ty,0),0) rotate(var(--tr,0deg)) scale(1);opacity:1}}
-  .uni-empty-legacy{display:none!important;}
-  #gamesScreen #betKeypadOverlay{display:none!important;}
+  /* ================= CTA GIOCHI + TASTIERINO IMPORTI + TABELLONE ROULETTE ================= */
   #pokerTable .pk-controls{display:none!important;}
-  #gamesScreen .qty-row:has(.bet-amount-tap),#gamesScreen .bet-level-tabs:has(+ .preset-grid){display:none!important;}
-  @media(max-width:520px){.uni-chip-dock{left:8px;right:8px;bottom:52px}.uni-dock-body{grid-template-columns:68px 1fr}.uni-slot{flex-basis:29px}.uni-chip{width:29px;height:29px}}
-
-
-  /* buy-in normale, fiches soltanto durante la puntata nel gioco */
-  #gamesScreen .qty-row:has(#rouletteBuyinInput),#gamesScreen .qty-row:has(#pokerBuyinInput),#gamesScreen .qty-row:has(#crapsBuyinInput),#gamesScreen .qty-row:has(#blackjackBuyinInput),#gamesScreen .qty-row:has(#wheelBuyinInput),#gamesScreen .qty-row:has(#draw5BuyinInput),#gamesScreen .qty-row:has(#slotsBuyinInput){display:flex!important;}
-  #gamesScreen #pokerSetup .bet-level-tabs,#gamesScreen #pokerSetup .preset-grid,#gamesScreen #draw5Setup .bet-level-tabs,#gamesScreen #draw5Setup .preset-grid{display:grid!important;}
-
-
-  /* Banco universale ancorato al gioco attivo, non sopra i controlli */
   #gamesScreen .game-body{position:relative;overflow-y:auto;}
-  #gamesScreen .uni-chip-dock{position:sticky;left:auto;right:auto;bottom:auto;width:100%;margin:14px 0 8px;transform:none;z-index:30;}
-  #gamesScreen .uni-chip-dock.open{transform:none;}
-  #gamesScreen .uni-dock-body{align-items:end;}
-  #gamesScreen .uni-stack-zone{height:72px;}
-  #gamesScreen .uni-tray{min-height:42px;align-self:center;}
-  #gamesScreen .uni-hint{margin-bottom:0;}
-  @media(max-width:520px){#gamesScreen .uni-chip-dock{margin-left:0;margin-right:0;width:100%;}}
+
+  /* pulsante lungo e sottile: CTA primaria dentro ogni gioco */
+  .game-cta{
+    display:block;
+    width:100%;
+    height:54px;
+    margin:14px 0 4px;
+    border:none;
+    border-radius:var(--r-md,16px);
+    background:var(--accent);
+    color:#FFFFFF;
+    font-family:var(--font-body);
+    font-weight:600;
+    font-size:15.5px;
+    letter-spacing:.01em;
+    cursor:pointer;
+    box-shadow:var(--shadow-soft,0 4px 14px rgba(18,18,30,0.16));
+    transition:transform .12s ease, opacity .2s ease;
+  }
+  .game-cta:active{transform:scale(0.97);}
+  .game-cta:disabled{opacity:0.4;box-shadow:none;cursor:default;}
+  .game-cta.ghost{background:transparent;color:var(--text-muted);border:1.5px solid var(--border);box-shadow:none;height:46px;font-size:14px;margin-top:8px;}
+  .game-cta.red{background:#A83232;}
+  .game-cta.gold{background:#C9A227;}
+  .game-cta.dark{background:#1B1B1B;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,0.28);}
+  .game-cta.wine{background:#8C2233;}
+  .game-cta.rust{background:#B45A2E;}
+  .game-cta.felt{background:#1F6B3A;}
+  .game-cta.violet{background:#6B3FA0;}
+
+  /* ---- tastierino importi universale: buy-in e puntate libere ---- */
+  #amountPadScreen{
+    z-index:11;
+    background:var(--surface);
+    padding:16px 24px 24px;
+    transform:translateY(100%);
+    transition:transform .3s cubic-bezier(.22,.9,.28,1);
+  }
+  #amountPadScreen.open{transform:translateY(0);}
+  .ap-head{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;flex-shrink:0;}
+  .ap-titles{flex:1;min-width:0;text-align:center;}
+  .ap-title{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:16.5px;
+    line-height:1.28;
+    color:var(--text);
+    margin:5px 0 0;
+  }
+  .ap-sub{font-size:12.5px;color:var(--text-muted);margin:4px 0 0;}
+  .ap-error{
+    min-height:16px;
+    margin:2px 0 4px;
+    text-align:center;
+    font-size:11.5px;
+    font-weight:600;
+    color:var(--danger);
+  }
+  #amountPadScreen .amount-display{margin:14px 0 2px;}
+  #amountPadScreen .keypad-grid{margin-top:auto;}
+  .ap-cancel{
+    width:100%;
+    height:42px;
+    margin-top:8px;
+    border:none;
+    background:transparent;
+    color:var(--text-muted);
+    font-family:var(--font-body);
+    font-size:13.5px;
+    font-weight:500;
+    cursor:pointer;
+  }
+
+  /* ---- tabellone classico della roulette ---- */
+  .rl-board{
+    display:grid;
+    grid-template-columns:24px repeat(12,1fr) 30px;
+    grid-template-rows:repeat(3,26px) 24px 28px;
+    gap:3px;
+    margin:2px 0 12px;
+  }
+  .rl-board.locked{opacity:.5;pointer-events:none;}
+  .rl-cell{
+    position:relative;
+    border:1.5px solid transparent;
+    border-radius:5px;
+    padding:0;
+    color:#FFFFFF;
+    font-family:var(--font-mono);
+    font-size:10px;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:transform .1s ease, border-color .15s ease, box-shadow .15s ease;
+  }
+  .rl-cell:active{transform:scale(0.92);}
+  .rl-cell.red{background:#A83232;}
+  .rl-cell.black{background:#161616;}
+  .rl-cell.green{background:#1F6B3A;grid-row:1/4;grid-column:1;font-size:12px;}
+  .rl-cell.out,.rl-cell.col{
+    background:var(--fill-subtle);
+    color:var(--text);
+    border-color:var(--border);
+    font-family:var(--font-body);
+    font-size:9.5px;
+    letter-spacing:.02em;
+  }
+  .rl-cell.col{grid-column:14;font-size:9px;}
+  .rl-cell.dz{grid-row:4;}
+  .rl-cell.ev{grid-row:5;}
+  .rl-cell.swatch-red{background:#A83232;color:#FFFFFF;border-color:transparent;}
+  .rl-cell.swatch-black{background:#161616;color:#FFFFFF;border-color:transparent;}
+  .rl-cell.staked{border-color:#C9A227;box-shadow:0 0 0 1.5px rgba(201,162,39,0.75);}
+  .rl-cell.picked{border-color:#F0D264;box-shadow:0 0 0 2px #F0D264;}
+  .rl-cell.incombo{border-color:#7FC4FF;box-shadow:0 0 0 1.5px rgba(127,196,255,0.8);}
+  .rl-chip{
+    position:absolute;
+    top:-5px;right:-4px;
+    min-width:15px;height:15px;
+    padding:0 3px;
+    border-radius:9px;
+    background:#C9A227;
+    color:#12211B;
+    font-family:var(--font-mono);
+    font-size:7.5px;
+    font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 1px 3px rgba(0,0,0,0.4);
+    pointer-events:none;
+  }
+  .rl-combo-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:9px;}
+  .rl-combo-btn{
+    height:34px;
+    border-radius:10px;
+    border:1.5px solid var(--border);
+    background:transparent;
+    color:var(--text-muted);
+    font-family:var(--font-body);
+    font-size:10px;
+    font-weight:600;
+    cursor:pointer;
+    transition:border-color .15s ease, color .15s ease, background .15s ease;
+  }
+  .rl-combo-btn.on{border-color:#7FC4FF;color:#4FA8EE;background:rgba(127,196,255,0.12);}
+  .rl-hint{
+    font-size:11.5px;
+    color:var(--text-muted);
+    text-align:center;
+    margin:0 0 9px;
+    min-height:15px;
+  }
+  .rl-hint.err{color:var(--danger);font-weight:600;}
+  .rl-summary{
+    display:flex;align-items:center;justify-content:space-between;gap:8px;
+    margin:0 0 8px;
+    font-size:11.5px;
+    color:var(--text-muted);
+  }
+  .rl-summary b{font-family:var(--font-mono);font-size:12.5px;color:var(--text);}
+  .rl-clear{border:none;background:transparent;color:var(--danger);font-size:11.5px;font-weight:600;cursor:pointer;padding:2px 0;flex-shrink:0;}
+  .rl-bets{display:flex;flex-direction:column;gap:6px;margin-bottom:6px;}
+  .rl-bet-row{
+    display:flex;align-items:center;gap:8px;
+    padding:8px 10px;
+    border-radius:12px;
+    background:var(--fill-subtle);
+    border:1px solid var(--border);
+  }
+  .rl-bet-main{flex:1;min-width:0;text-align:left;background:none;border:none;padding:0;cursor:pointer;font-family:var(--font-body);}
+  .rl-bet-label{font-size:12.5px;font-weight:600;color:var(--text);margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .rl-bet-meta{font-size:10.5px;color:var(--text-muted);margin:2px 0 0;}
+  .rl-bet-amount{font-family:var(--font-mono);font-size:12.5px;font-weight:600;color:var(--text);flex-shrink:0;}
+  .rl-bet-del{
+    width:26px;height:26px;
+    border-radius:50%;
+    border:none;
+    background:transparent;
+    color:var(--text-muted);
+    font-size:12px;
+    cursor:pointer;
+    flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .rl-bet-del:active{transform:scale(0.9);}
+  @media(max-width:520px){
+    .rl-board{grid-template-columns:22px repeat(12,1fr) 28px;gap:2.5px;}
+    .rl-cell{font-size:9.5px;}
+  }
+
 
   /* ==================== PAGAMENTO CONTACTLESS NFC (simulato) ====================
      Nessun pagamento reale, nessun POS, nessun hardware NFC.
@@ -4693,13 +4825,13 @@
 <!-- ==================== SPLASHSCREEN ANIMATA ==================== -->
 <svg width="0" height="0" focusable="false" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden;">
   <symbol id="spBillShape" viewBox="0 0 256 124">
-    <path d="M8 58 L52 104 L248 70 L248 80 L52 114 L8 68 Z" fill="#2A8154" stroke="#22744A" stroke-width="1.4"/>
-    <path d="M8 58 L204 24 L248 70 L52 104 Z" fill="#44B97C"/>
-    <path d="M28 62.1 L196.4 32.9 L228 65.9 L59.6 95.1 Z" fill="#F4EBCB"/>
-    <path d="M40.1 65 L192.7 38.6 L215.9 63 L63.3 89.4 Z" fill="#37A96F"/>
-    <ellipse rx="7" ry="5.4" fill="#F4EBCB" transform="matrix(.985 -.171 .692 .723 73 73.5)"/>
-    <ellipse rx="7" ry="5.4" fill="#F4EBCB" transform="matrix(.985 -.171 .692 .723 183 54.5)"/>
-    <text x="0" y="16" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="46" font-weight="bold" fill="#12352A" transform="matrix(.985 -.171 .692 .723 116.9 52.4)">$</text>
+    <path d="M8 58 L52 104 L248 70 L248 80 L52 114 L8 68 Z" fill="#2A8154" stroke="#22744A" stroke-width="1.4"></path>
+    <path d="M8 58 L204 24 L248 70 L52 104 Z" fill="#44B97C"></path>
+    <path d="M28 62.1 L196.4 32.9 L228 65.9 L59.6 95.1 Z" fill="#F4EBCB"></path>
+    <path d="M40.1 65 L192.7 38.6 L215.9 63 L63.3 89.4 Z" fill="#37A96F"></path>
+    <ellipse rx="7" ry="5.4" fill="#F4EBCB" transform="matrix(.985 -.171 .692 .723 73 73.5)"></ellipse>
+    <ellipse rx="7" ry="5.4" fill="#F4EBCB" transform="matrix(.985 -.171 .692 .723 183 54.5)"></ellipse>
+    <text x="0" y="16" text-anchor="middle" font-family="Georgia,&#39;Times New Roman&#39;,serif" font-size="46" font-weight="bold" fill="#12352A" transform="matrix(.985 -.171 .692 .723 116.9 52.4)">$</text>
   </symbol>
 </svg>
 
@@ -4716,12 +4848,12 @@
           <span class="sp-spark" style="--a:54deg;--sd:2;--h:22px;--c:#FBA53C;"><i></i></span>
         </div>
         <div class="sp-bills" aria-hidden="true">
-          <div class="sp-bill sp-bill-1"><svg viewBox="0 0 256 124"><use href="#spBillShape" xlink:href="#spBillShape"/></svg></div>
-          <div class="sp-bill sp-bill-2"><svg viewBox="0 0 256 124"><use href="#spBillShape" xlink:href="#spBillShape"/></svg></div>
-          <div class="sp-bill sp-bill-3"><svg viewBox="0 0 256 124"><use href="#spBillShape" xlink:href="#spBillShape"/></svg></div>
-          <div class="sp-bill sp-bill-4"><svg viewBox="0 0 256 124"><use href="#spBillShape" xlink:href="#spBillShape"/></svg></div>
-          <div class="sp-bill sp-bill-5"><svg viewBox="0 0 256 124"><use href="#spBillShape" xlink:href="#spBillShape"/></svg></div>
-          <div class="sp-bill sp-bill-6"><svg viewBox="0 0 256 124"><use href="#spBillShape" xlink:href="#spBillShape"/></svg></div>
+          <div class="sp-bill sp-bill-1"><svg viewBox="0 0 256 124"><use href="#spBillShape" xlink:href="#spBillShape"></use></svg></div>
+          <div class="sp-bill sp-bill-2"><svg viewBox="0 0 256 124"><use href="#spBillShape" xlink:href="#spBillShape"></use></svg></div>
+          <div class="sp-bill sp-bill-3"><svg viewBox="0 0 256 124"><use href="#spBillShape" xlink:href="#spBillShape"></use></svg></div>
+          <div class="sp-bill sp-bill-4"><svg viewBox="0 0 256 124"><use href="#spBillShape" xlink:href="#spBillShape"></use></svg></div>
+          <div class="sp-bill sp-bill-5"><svg viewBox="0 0 256 124"><use href="#spBillShape" xlink:href="#spBillShape"></use></svg></div>
+          <div class="sp-bill sp-bill-6"><svg viewBox="0 0 256 124"><use href="#spBillShape" xlink:href="#spBillShape"></use></svg></div>
         </div>
       </div>
     </div>
@@ -4858,7 +4990,7 @@
           <i class="ti ti-bell"></i>
           <span class="notif-dot" id="notifDot" style="display:none;"></span>
         </button>
-        <button class="avatar-btn" onclick="switchTab('settings')" aria-label="Profilo"><span id="homeAvatar">P</span></button>
+        <button class="avatar-btn" onclick="switchTab(&#39;settings&#39;)" aria-label="Profilo"><span id="homeAvatar">P</span></button>
       </div>
     </header>
 
@@ -4870,7 +5002,7 @@
 
       <div class="quick-actions">
         <button class="qa-item" onclick="openPayFlow()"><span class="qa-icon"><i class="ti ti-arrow-up-right"></i></span><span class="qa-label">Paga</span></button>
-        <button class="qa-item" onclick="openKeypad('topup')"><span class="qa-icon"><i class="ti ti-arrow-down-left"></i></span><span class="qa-label">Ricarica</span></button>
+        <button class="qa-item" onclick="openKeypad(&#39;topup&#39;)"><span class="qa-icon"><i class="ti ti-arrow-down-left"></i></span><span class="qa-label">Ricarica</span></button>
         <button class="qa-item" onclick="openTransfer()"><span class="qa-icon"><i class="ti ti-credit-card"></i></span><span class="qa-label">Trasferisci</span></button>
         <button class="qa-item" onclick="openMoreActions()"><span class="qa-icon"><i class="ti ti-layout-grid"></i></span><span class="qa-label">Altro</span></button>
       </div>
@@ -4881,8 +5013,8 @@
           <button class="panel-link" id="expensesToggleBtn" onclick="toggleExpensesAll()">Vedi tutte</button>
         </div>
         <div class="seg-tabs">
-          <button class="seg-tab active" id="expTabMoves" onclick="setExpenseView('moves')">Movimenti</button>
-          <button class="seg-tab" id="expTabCats" onclick="setExpenseView('cats')">Categorie</button>
+          <button class="seg-tab active" id="expTabMoves" onclick="setExpenseView(&#39;moves&#39;)">Movimenti</button>
+          <button class="seg-tab" id="expTabCats" onclick="setExpenseView(&#39;cats&#39;)">Categorie</button>
         </div>
         <div class="ledger" id="ledger"></div>
         <div class="cat-totals" id="catTotals" style="display:none;"></div>
@@ -4922,7 +5054,7 @@
     <p class="settings-label">Dati salvati</p>
     <div class="export-import-row">
       <button class="confirm-btn topup" onclick="exportData()">Esporta dati</button>
-      <button class="confirm-btn topup" onclick="document.getElementById('importFileInput').click()">Importa dati</button>
+      <button class="confirm-btn topup" onclick="document.getElementById(&#39;importFileInput&#39;).click()">Importa dati</button>
     </div>
     <input type="file" id="importFileInput" accept="application/json" style="display:none;" onchange="importData(event)">
     <button class="confirm-btn topup" style="margin-top:8px;" onclick="resetAllData()">Azzera tutti i dati</button>
@@ -4979,13 +5111,13 @@
 
   <!-- TAB BAR IN BASSO -->
   <div class="bottom-tab-bar" id="bottomTabBar">
-    <button class="tab-bar-btn active" id="tabBtnHome" onclick="switchTab('home')" aria-label="Home"><i class="ti ti-home"></i><span class="tab-label">Home</span></button>
-    <button class="tab-bar-btn" id="tabBtnGames" onclick="switchTab('games')" aria-label="Giochi">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="8" width="19" height="10" rx="5"/><circle cx="7" cy="11.3" r="0.4" fill="currentColor"/><circle cx="7" cy="14.7" r="0.4" fill="currentColor"/><circle cx="5.3" cy="13" r="0.4" fill="currentColor"/><circle cx="8.7" cy="13" r="0.4" fill="currentColor"/><circle cx="16" cy="11.5" r="1" fill="currentColor" stroke="none"/><circle cx="18.2" cy="13.7" r="1" fill="currentColor" stroke="none"/></svg>
+    <button class="tab-bar-btn active" id="tabBtnHome" onclick="switchTab(&#39;home&#39;)" aria-label="Home"><i class="ti ti-home"></i><span class="tab-label">Home</span></button>
+    <button class="tab-bar-btn" id="tabBtnGames" onclick="switchTab(&#39;games&#39;)" aria-label="Giochi">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="8" width="19" height="10" rx="5"></rect><circle cx="7" cy="11.3" r="0.4" fill="currentColor"></circle><circle cx="7" cy="14.7" r="0.4" fill="currentColor"></circle><circle cx="5.3" cy="13" r="0.4" fill="currentColor"></circle><circle cx="8.7" cy="13" r="0.4" fill="currentColor"></circle><circle cx="16" cy="11.5" r="1" fill="currentColor" stroke="none"></circle><circle cx="18.2" cy="13.7" r="1" fill="currentColor" stroke="none"></circle></svg>
       <span class="tab-label">Giochi</span>
     </button>
-    <button class="tab-bar-btn" id="tabBtnCareer" onclick="switchTab('career')" aria-label="Carriera"><i class="ti ti-chart-bar"></i><span class="tab-label">Carriera</span></button>
-    <button class="tab-bar-btn" id="tabBtnSettings" onclick="switchTab('settings')" aria-label="Profilo"><i class="ti ti-user"></i><span class="tab-label">Profilo</span></button>
+    <button class="tab-bar-btn" id="tabBtnCareer" onclick="switchTab(&#39;career&#39;)" aria-label="Carriera"><i class="ti ti-chart-bar"></i><span class="tab-label">Carriera</span></button>
+    <button class="tab-bar-btn" id="tabBtnSettings" onclick="switchTab(&#39;settings&#39;)" aria-label="Profilo"><i class="ti ti-user"></i><span class="tab-label">Profilo</span></button>
   </div>
 
   <!-- KEYPAD SCREEN -->
@@ -4995,7 +5127,7 @@
         <p class="sheet-title" id="keypadTitle">Invia</p>
         <p class="sheet-sub" id="keypadSub">Scegli l'importo</p>
       </div>
-      <button class="close-btn" onclick="closeSheet('keypadScreen')">✕</button>
+      <button class="close-btn" onclick="closeSheet(&#39;keypadScreen&#39;)">✕</button>
     </div>
 
     <input type="text" class="memo-input" id="memoInput" placeholder="Oggetto (es. Cena con amici)" maxlength="30">
@@ -5006,21 +5138,21 @@
     </div>
 
     <div class="keypad-grid">
-      <button class="key" onclick="pressKey('1')">1</button>
-      <button class="key" onclick="pressKey('2')">2</button>
-      <button class="key" onclick="pressKey('3')">3</button>
-      <button class="key" onclick="pressKey('4')">4</button>
-      <button class="key" onclick="pressKey('5')">5</button>
-      <button class="key" onclick="pressKey('6')">6</button>
-      <button class="key" onclick="pressKey('7')">7</button>
-      <button class="key" onclick="pressKey('8')">8</button>
-      <button class="key" onclick="pressKey('9')">9</button>
+      <button class="key" onclick="pressKey(&#39;1&#39;)">1</button>
+      <button class="key" onclick="pressKey(&#39;2&#39;)">2</button>
+      <button class="key" onclick="pressKey(&#39;3&#39;)">3</button>
+      <button class="key" onclick="pressKey(&#39;4&#39;)">4</button>
+      <button class="key" onclick="pressKey(&#39;5&#39;)">5</button>
+      <button class="key" onclick="pressKey(&#39;6&#39;)">6</button>
+      <button class="key" onclick="pressKey(&#39;7&#39;)">7</button>
+      <button class="key" onclick="pressKey(&#39;8&#39;)">8</button>
+      <button class="key" onclick="pressKey(&#39;9&#39;)">9</button>
       <div class="key empty"></div>
-      <button class="key" onclick="pressKey('0')">0</button>
-      <button class="key back" onclick="pressKey('back')"><i class="ti ti-backspace"></i></button>
+      <button class="key" onclick="pressKey(&#39;0&#39;)">0</button>
+      <button class="key back" onclick="pressKey(&#39;back&#39;)"><i class="ti ti-backspace"></i></button>
     </div>
 
-    <button class="confirm-btn" id="confirmBtn" disabled onclick="confirmAmount()">Conferma</button>
+    <button class="confirm-btn" id="confirmBtn" disabled="" onclick="confirmAmount()">Conferma</button>
   </div>
 
   <!-- TRANSFER SCREEN -->
@@ -5030,7 +5162,7 @@
         <p class="sheet-title">Trasferisci</p>
         <p class="sheet-sub">Sposta soldi tra i tuoi conti</p>
       </div>
-      <button class="close-btn" onclick="closeSheet('transferScreen')">✕</button>
+      <button class="close-btn" onclick="closeSheet(&#39;transferScreen&#39;)">✕</button>
     </div>
 
     <div class="transfer-from-row">
@@ -5050,21 +5182,21 @@
     </div>
 
     <div class="keypad-grid">
-      <button class="key" onclick="pressTransferKey('1')">1</button>
-      <button class="key" onclick="pressTransferKey('2')">2</button>
-      <button class="key" onclick="pressTransferKey('3')">3</button>
-      <button class="key" onclick="pressTransferKey('4')">4</button>
-      <button class="key" onclick="pressTransferKey('5')">5</button>
-      <button class="key" onclick="pressTransferKey('6')">6</button>
-      <button class="key" onclick="pressTransferKey('7')">7</button>
-      <button class="key" onclick="pressTransferKey('8')">8</button>
-      <button class="key" onclick="pressTransferKey('9')">9</button>
+      <button class="key" onclick="pressTransferKey(&#39;1&#39;)">1</button>
+      <button class="key" onclick="pressTransferKey(&#39;2&#39;)">2</button>
+      <button class="key" onclick="pressTransferKey(&#39;3&#39;)">3</button>
+      <button class="key" onclick="pressTransferKey(&#39;4&#39;)">4</button>
+      <button class="key" onclick="pressTransferKey(&#39;5&#39;)">5</button>
+      <button class="key" onclick="pressTransferKey(&#39;6&#39;)">6</button>
+      <button class="key" onclick="pressTransferKey(&#39;7&#39;)">7</button>
+      <button class="key" onclick="pressTransferKey(&#39;8&#39;)">8</button>
+      <button class="key" onclick="pressTransferKey(&#39;9&#39;)">9</button>
       <div class="key empty"></div>
-      <button class="key" onclick="pressTransferKey('0')">0</button>
-      <button class="key back" onclick="pressTransferKey('back')"><i class="ti ti-backspace"></i></button>
+      <button class="key" onclick="pressTransferKey(&#39;0&#39;)">0</button>
+      <button class="key back" onclick="pressTransferKey(&#39;back&#39;)"><i class="ti ti-backspace"></i></button>
     </div>
 
-    <button class="confirm-btn transfer" id="transferConfirmBtn" disabled onclick="confirmTransfer()">Trasferisci</button>
+    <button class="confirm-btn transfer" id="transferConfirmBtn" disabled="" onclick="confirmTransfer()">Trasferisci</button>
   </div>
 
   <!-- NUOVA CARTA / CONTO: provider reali + preview live -->
@@ -5074,19 +5206,19 @@
         <p class="sheet-title">Nuova carta</p>
         <p class="sheet-sub">Scegli provider, circuito e nome</p>
       </div>
-      <button class="close-btn" onclick="closeSheet('newAccountScreen')">&#10005;</button>
+      <button class="close-btn" onclick="closeSheet(&#39;newAccountScreen&#39;)">✕</button>
     </div>
 
     <div class="acc-form-scroll">
       <div class="card-preview" id="newAccountPreview"></div>
 
-      <input type="text" class="name-input" id="accountNameInput" placeholder="Es. Conto Revolut, Spese casa..." maxlength="20" oninput="onAccountDraftName('new', this.value)">
+      <input type="text" class="name-input" id="accountNameInput" placeholder="Es. Conto Revolut, Spese casa..." maxlength="20" oninput="onAccountDraftName(&#39;new&#39;, this.value)">
 
       <p class="preset-label">Provider</p>
       <div class="prov-tabs" id="newProviderTabs"></div>
       <div class="search-field prov-search">
         <i class="ti ti-search"></i>
-        <input type="text" id="newProviderSearch" placeholder="Cerca provider o banca" oninput="onProviderSearch('new', this.value)">
+        <input type="text" id="newProviderSearch" placeholder="Cerca provider o banca" oninput="onProviderSearch(&#39;new&#39;, this.value)">
       </div>
       <div class="prov-grid" id="newProviderGrid"></div>
 
@@ -5094,7 +5226,7 @@
       <div class="net-row" id="newNetworkRow"></div>
     </div>
 
-    <button class="confirm-btn pay" id="createAccountBtn" disabled onclick="createAccount()">Crea carta</button>
+    <button class="confirm-btn pay" id="createAccountBtn" disabled="" onclick="createAccount()">Crea carta</button>
   </div>
 
   <!-- MODIFICA CARTA / CONTO -->
@@ -5104,19 +5236,19 @@
         <p class="sheet-title">Modifica carta</p>
         <p class="sheet-sub">Cambia nome, provider o circuito</p>
       </div>
-      <button class="close-btn" onclick="closeSheet('editAccountScreen')">&#10005;</button>
+      <button class="close-btn" onclick="closeSheet(&#39;editAccountScreen&#39;)">✕</button>
     </div>
 
     <div class="acc-form-scroll">
       <div class="card-preview" id="editAccountPreview"></div>
 
-      <input type="text" class="name-input" id="editAccountNameInput" placeholder="Nome della carta" maxlength="20" oninput="onAccountDraftName('edit', this.value)">
+      <input type="text" class="name-input" id="editAccountNameInput" placeholder="Nome della carta" maxlength="20" oninput="onAccountDraftName(&#39;edit&#39;, this.value)">
 
       <p class="preset-label">Provider</p>
       <div class="prov-tabs" id="editProviderTabs"></div>
       <div class="search-field prov-search">
         <i class="ti ti-search"></i>
-        <input type="text" id="editProviderSearch" placeholder="Cerca provider o banca" oninput="onProviderSearch('edit', this.value)">
+        <input type="text" id="editProviderSearch" placeholder="Cerca provider o banca" oninput="onProviderSearch(&#39;edit&#39;, this.value)">
       </div>
       <div class="prov-grid" id="editProviderGrid"></div>
 
@@ -5134,7 +5266,7 @@
         <p class="sheet-title">Regala sub Twitch</p>
         <p class="sheet-sub">Scegli tier e quantità</p>
       </div>
-      <button class="close-btn" onclick="closeSheet('twitchScreen')">✕</button>
+      <button class="close-btn" onclick="closeSheet(&#39;twitchScreen&#39;)">✕</button>
     </div>
 
     <div class="tier-row" id="tierRow"></div>
@@ -5175,29 +5307,19 @@
 
     <div class="game-body" id="gameBody">
       <div id="rouletteSection" style="display:none;">
-        <div class="table-buyin-bar" id="rouletteBuyinBar">
-          <p class="table-buyin-label">Quanto porti al tavolo?</p>
-          <div class="qty-row">
-            <button class="qty-btn" onclick="stepTableBuyin('roulette', -50)">−</button>
-            <input type="text" inputmode="none" readonly class="qty-input bet-amount-tap" id="rouletteBuyinInput" value="500" onclick="openBetKeypad('rouletteBuyin')">
-            <span class="qty-suffix">€</span>
-            <button class="qty-btn" onclick="stepTableBuyin('roulette', 50)">+</button>
-          </div>
-          <button class="confirm-btn" style="margin-top:0;" onclick="sitDownAtTable('roulette')">Siediti al tavolo</button>
-        </div>
         <div class="stack-bar" id="rouletteStackBar">
           <div class="stack-bar-info">
             <span class="stack-bar-label">Il tuo stack</span>
             <span class="stack-bar-value" id="rouletteStackValue">€0,00</span>
           </div>
-          <button class="stack-bar-leave" onclick="leaveTable('roulette')">Lascia il tavolo</button>
+          <button class="stack-bar-leave" onclick="leaveTable(&#39;roulette&#39;)">Lascia il tavolo</button>
         </div>
         <div class="luck-slider-wrap">
           <div class="luck-slider-head">
             <span class="luck-slider-label"><i class="ti ti-clover"></i> Fortuna</span>
             <span class="luck-slider-value" id="rouletteLuckValue">0%</span>
           </div>
-          <input type="range" min="0" max="100" step="1" value="0" class="luck-slider" id="rouletteLuckSlider" oninput="setLuckValue('roulette', this.value)">
+          <input type="range" min="0" max="100" step="1" value="0" class="luck-slider" id="rouletteLuckSlider" oninput="setLuckValue(&#39;roulette&#39;, this.value)">
           <p class="luck-slider-hint">0% = gioco normale · 100% = vittoria garantita</p>
         </div>
         <div class="roulette-wheel-wrap">
@@ -5211,36 +5333,17 @@
           <div class="roulette-hub"></div>
         </div>
 
-        <div class="bet-category-tabs" id="betCategoryTabs"></div>
+        <div class="rl-combo-row" id="rlComboRow"></div>
+        <p class="rl-hint" id="rlHint">Tocca un numero o una casella per piazzare la puntata.</p>
+        <div class="rl-board" id="rlBoard"></div>
 
-        <div id="outsideBetWrap">
-          <div class="bet-type-row" id="outsideGrid"></div>
+        <div class="rl-summary">
+          <span>Puntate: <b id="rlBetsCount">0</b> · totale <b id="rlBetsTotal">€0,00</b></span>
+          <button class="rl-clear" id="rlClearBtn" onclick="rlClearBets()" style="display:none;">Svuota tutto</button>
         </div>
+        <div class="rl-bets" id="rlBetsList"></div>
 
-        <div id="straightBetWrap" style="display:none;">
-          <p class="preset-label">Scegli un numero (paga x36)</p>
-          <div class="number-grid" id="straightGrid"></div>
-        </div>
-
-        <div id="splitBetWrap" style="display:none;">
-          <p class="preset-label">Scegli due numeri (coppia, paga x18)</p>
-          <div class="number-grid" id="splitGrid"></div>
-        </div>
-
-        <p class="preset-label">Importo puntata</p>
-        <div class="bet-level-tabs" id="betLevelTabs"></div>
-        <div class="preset-grid" id="betPresetGrid"></div>
-
-        <div class="qty-row">
-          <button class="qty-btn" onclick="stepBet(-5)">−</button>
-          <input type="text" inputmode="none" readonly class="qty-input bet-amount-tap" id="betInput" value="10" onclick="openBetKeypad('roulette')">
-          <span class="qty-suffix">€</span>
-          <button class="qty-btn" onclick="stepBet(5)">+</button>
-        </div>
-
-        <p class="potential-win" id="potentialWin">Vincita potenziale: <b>+€0,00</b></p>
-
-        <button class="confirm-btn" id="spinBtn" onclick="uniBetAction('roulette','roulette',uniBalance(),()=>spinRoulette())" style="background:#A83232;color:#FFFFFF;">Gira la ruota</button>
+        <button class="game-cta red" id="spinBtn" onclick="spinRoulette()" disabled="">Gira la ruota</button>
 
         <div class="roulette-result" id="rouletteResult" style="display:none;">
           <p class="roulette-result-number" id="rouletteResultNumber">—</p>
@@ -5262,7 +5365,7 @@
               <span class="luck-slider-label"><i class="ti ti-clover"></i> Fortuna</span>
               <span class="luck-slider-value" id="pokerLuckValue">0%</span>
             </div>
-            <input type="range" min="0" max="100" step="1" value="0" class="luck-slider" id="pokerLuckSlider" oninput="setLuckValue('poker', this.value)">
+            <input type="range" min="0" max="100" step="1" value="0" class="luck-slider" id="pokerLuckSlider" oninput="setLuckValue(&#39;poker&#39;, this.value)">
             <p class="luck-slider-hint">0% = gioco normale · 100% = vittoria garantita</p>
           </div>
           <p class="preset-label" style="margin-top:0;">Contro chi giochi</p>
@@ -5276,17 +5379,8 @@
           <p class="preset-label">Difficoltà avversari</p>
           <div class="mode-toggle" id="pokerDifficultyToggle" style="grid-template-columns:repeat(3,1fr);"></div>
 
-          <p class="preset-label">Punta per la mano (buy-in)</p>
-          <div class="bet-level-tabs" id="pokerBuyinLevelTabs"></div>
-          <div class="preset-grid" id="pokerBuyinPresetGrid"></div>
-          <div class="qty-row">
-            <button class="qty-btn" onclick="stepPokerBuyin(-10)">−</button>
-            <input type="text" inputmode="none" readonly class="qty-input bet-amount-tap" id="pokerBuyinInput" value="50" onclick="openBetKeypad('pokerBuyin')">
-            <span class="qty-suffix">€</span>
-            <button class="qty-btn" onclick="stepPokerBuyin(10)">+</button>
-          </div>
           <p class="preset-label" style="margin-top:14px;" id="pokerSetupNote">Tu e gli avversari puntate lo stesso importo (buy-in). Ad ogni mano si pagano automaticamente il piccolo buio e il grande buio, alternando chi li paga. Le fiches restano tue finché non lasci il tavolo: puoi giocare tutte le mani che vuoi e uscire quando vuoi, con quello che ti rimane.</p>
-          <button class="confirm-btn" id="startHandBtn" onclick="startPokerHand()" style="background:#1F6B3A;color:#FFFFFF;">Siediti al tavolo</button>
+          <button class="game-cta felt" id="startHandBtn" onclick="startPokerHand()">Inizia la mano</button>
         </div>
 
         <div id="pokerTable" style="display:none;">
@@ -5303,12 +5397,12 @@
 
             <div class="pk-pot-zone" id="pokerPotZone">
               <div class="pk-pot-chips" id="pokerPotChips"></div>
-              <p class="poker-pot pk-pot-label" id="pokerPot">Piatto: &euro;0,00</p>
+              <p class="poker-pot pk-pot-label" id="pokerPot">Piatto: €0,00</p>
             </div>
 
             <div class="poker-community pk-community" id="pokerCommunity"></div>
 
-            <p class="poker-status pk-blinds" id="pokerBlindsLabel">Bui: &mdash;</p>
+            <p class="poker-status pk-blinds" id="pokerBlindsLabel">Bui: —</p>
           </div>
 
           <div class="pk-hero">
@@ -5323,28 +5417,20 @@
               <div class="pk-swipe-guide" id="pokerSwipeGuide"><i class="ti ti-chevron-up"></i><span>trascina per puntare</span></div>
               <div class="pk-bet-stack empty" id="pokerBetStack">
                 <div class="pk-bet-chips" id="pokerBetChips"></div>
-                <div class="pk-bet-total" id="pokerBetTotal">&euro;0,00</div>
+                <div class="pk-bet-total" id="pokerBetTotal">€0,00</div>
               </div>
             </div>
             <div class="pk-tray off" id="pokerChipTray"></div>
             <p class="pk-tray-hint" id="pokerTrayHint"></p>
           </div>
 
-          <!-- vecchio pannello puntata a tastierino: conservato nascosto per compatibilita', non piu' usato -->
+          <!-- deposito del valore scelto col tastierino libero -->
           <div id="pokerBetWrap" style="display:none;">
-            <div class="bet-level-tabs" id="pokerBetLevelTabs"></div>
-            <div class="preset-grid" id="pokerBetPresetGrid"></div>
-            <div class="qty-row">
-              <button class="qty-btn" onclick="stepPokerBet(-5)">&minus;</button>
-              <input type="text" inputmode="none" readonly class="qty-input bet-amount-tap" id="pokerBetInput" value="10" onclick="openBetKeypad('pokerBet')">
-              <span class="qty-suffix">&euro;</span>
-              <button class="qty-btn" onclick="stepPokerBet(5)">+</button>
-            </div>
-            <button class="confirm-btn" style="background:#1F6B3A;color:#FFFFFF;" onclick="confirmPokerBet()">Conferma</button>
+            <input type="hidden" id="pokerBetInput" value="10">
           </div>
 
           <div class="roulette-result" id="pokerResult" style="display:none;">
-            <p class="roulette-result-number" id="pokerResultTitle">&mdash;</p>
+            <p class="roulette-result-number" id="pokerResultTitle">—</p>
             <p class="roulette-result-outcome" id="pokerResultOutcome"></p>
             <button class="confirm-btn" id="pokerNextHandBtn" style="background:#1F6B3A;color:#FFFFFF;margin-top:12px;" onclick="nextPokerHand()">Prossima mano</button>
             <button class="confirm-btn" id="pokerLeaveResultBtn" style="background:transparent;color:var(--text-muted);border:1.5px solid var(--border);margin-top:8px;" onclick="handlePokerLeaveClick()">Lascia il tavolo</button>
@@ -5353,22 +5439,12 @@
       </div>
 
       <div id="crapsSection" style="display:none;">
-        <div class="table-buyin-bar" id="crapsBuyinBar">
-          <p class="table-buyin-label">Quanto porti al tavolo?</p>
-          <div class="qty-row">
-            <button class="qty-btn" onclick="stepTableBuyin('craps', -50)">−</button>
-            <input type="text" inputmode="none" readonly class="qty-input bet-amount-tap" id="crapsBuyinInput" value="500" onclick="openBetKeypad('crapsBuyin')">
-            <span class="qty-suffix">€</span>
-            <button class="qty-btn" onclick="stepTableBuyin('craps', 50)">+</button>
-          </div>
-          <button class="confirm-btn" style="margin-top:0;" onclick="sitDownAtTable('craps')">Siediti al tavolo</button>
-        </div>
         <div class="stack-bar" id="crapsStackBar">
           <div class="stack-bar-info">
             <span class="stack-bar-label">Il tuo stack</span>
             <span class="stack-bar-value" id="crapsStackValue">€0,00</span>
           </div>
-          <button class="stack-bar-leave" onclick="leaveTable('craps')">Lascia il tavolo</button>
+          <button class="stack-bar-leave" onclick="leaveTable(&#39;craps&#39;)">Lascia il tavolo</button>
         </div>
         <div id="crapsSetup">
           <div class="luck-slider-wrap">
@@ -5376,20 +5452,12 @@
               <span class="luck-slider-label"><i class="ti ti-clover"></i> Fortuna</span>
               <span class="luck-slider-value" id="crapsLuckValue">0%</span>
             </div>
-            <input type="range" min="0" max="100" step="1" value="0" class="luck-slider" id="crapsLuckSlider" oninput="setLuckValue('craps', this.value)">
+            <input type="range" min="0" max="100" step="1" value="0" class="luck-slider" id="crapsLuckSlider" oninput="setLuckValue(&#39;craps&#39;, this.value)">
             <p class="luck-slider-hint">0% = gioco normale · 100% = vittoria garantita</p>
           </div>
-          <p class="preset-label">Punta (pass line)</p>
-          <div class="bet-level-tabs" id="crapsBetLevelTabs"></div>
-          <div class="preset-grid" id="crapsBetPresetGrid"></div>
-          <div class="qty-row">
-            <button class="qty-btn" onclick="stepCrapsBet(-5)">−</button>
-            <input type="text" inputmode="none" readonly class="qty-input bet-amount-tap" id="crapsBetInput" value="10" onclick="openBetKeypad('craps')">
-            <span class="qty-suffix">€</span>
-            <button class="qty-btn" onclick="stepCrapsBet(5)">+</button>
-          </div>
           <p class="preset-label" style="margin-top:14px;">7 o 11 al primo lancio vinci. 2, 3 o 12 perdi. Con un altro numero fissi il "punto": rifallo prima di un 7 per vincere.</p>
-          <button class="confirm-btn" id="crapsStartBtn" onclick="uniBetAction('craps','craps',uniBalance(),()=>startCraps())" style="background:#8C2233;color:#FFFFFF;">Inizia partita</button>
+          <input type="hidden" id="crapsBetInput" value="10">
+          <button class="game-cta wine" id="crapsStartBtn" onclick="promptGameBet(&#39;craps&#39;)">Fai la tua puntata</button>
         </div>
 
         <div id="crapsTable" style="display:none;">
@@ -5409,22 +5477,12 @@
       </div>
 
       <div id="blackjackSection" style="display:none;">
-        <div class="table-buyin-bar" id="blackjackBuyinBar">
-          <p class="table-buyin-label">Quanto porti al tavolo?</p>
-          <div class="qty-row">
-            <button class="qty-btn" onclick="stepTableBuyin('blackjack', -50)">−</button>
-            <input type="text" inputmode="none" readonly class="qty-input bet-amount-tap" id="blackjackBuyinInput" value="500" onclick="openBetKeypad('bjBuyin')">
-            <span class="qty-suffix">€</span>
-            <button class="qty-btn" onclick="stepTableBuyin('blackjack', 50)">+</button>
-          </div>
-          <button class="confirm-btn" style="margin-top:0;" onclick="sitDownAtTable('blackjack')">Siediti al tavolo</button>
-        </div>
         <div class="stack-bar" id="blackjackStackBar">
           <div class="stack-bar-info">
             <span class="stack-bar-label">Il tuo stack</span>
             <span class="stack-bar-value" id="blackjackStackValue">€0,00</span>
           </div>
-          <button class="stack-bar-leave" onclick="leaveTable('blackjack')">Lascia il tavolo</button>
+          <button class="stack-bar-leave" onclick="leaveTable(&#39;blackjack&#39;)">Lascia il tavolo</button>
         </div>
         <div id="blackjackSetup">
           <div class="luck-slider-wrap">
@@ -5432,20 +5490,12 @@
               <span class="luck-slider-label"><i class="ti ti-clover"></i> Fortuna</span>
               <span class="luck-slider-value" id="blackjackLuckValue">0%</span>
             </div>
-            <input type="range" min="0" max="100" step="1" value="0" class="luck-slider" id="blackjackLuckSlider" oninput="setLuckValue('blackjack', this.value)">
+            <input type="range" min="0" max="100" step="1" value="0" class="luck-slider" id="blackjackLuckSlider" oninput="setLuckValue(&#39;blackjack&#39;, this.value)">
             <p class="luck-slider-hint">0% = gioco normale · 100% = vittoria garantita</p>
           </div>
           <div class="cc-hud" id="bjCountHudSetup"></div>
-          <p class="preset-label">Punta</p>
-          <div class="bet-level-tabs" id="bjBetLevelTabs"></div>
-          <div class="preset-grid" id="bjBetPresetGrid"></div>
-          <div class="qty-row">
-            <button class="qty-btn" onclick="stepBjBet(-5)">−</button>
-            <input type="text" inputmode="none" readonly class="qty-input bet-amount-tap" id="bjBetInput" value="10" onclick="openBetKeypad('bj')">
-            <span class="qty-suffix">€</span>
-            <button class="qty-btn" onclick="stepBjBet(5)">+</button>
-          </div>
-          <button class="confirm-btn" id="bjStartBtn" onclick="uniBetAction('bj','bj',uniBalance(),()=>startBlackjack())" style="background:#1B1B1B;color:#FFFFFF;">Nuova mano</button>
+          <input type="hidden" id="bjBetInput" value="10">
+          <button class="game-cta dark" id="bjStartBtn" onclick="promptGameBet(&#39;blackjack&#39;)">Fai la tua puntata</button>
         </div>
 
         <div id="blackjackTable" style="display:none;">
@@ -5471,22 +5521,12 @@
 
       <div id="wheelSection" style="display:none;">
         <p class="bonus-instructions" style="margin-top:0;">Ruota ispirata ai grandi wheel game dei casinò online: numeri 1/2/5/10 e quattro round bonus. Versione semplificata delle regole reali.</p>
-        <div class="table-buyin-bar" id="wheelBuyinBar">
-          <p class="table-buyin-label">Quanto porti al tavolo?</p>
-          <div class="qty-row">
-            <button class="qty-btn" onclick="stepTableBuyin('wheel', -50)">−</button>
-            <input type="text" inputmode="none" readonly class="qty-input bet-amount-tap" id="wheelBuyinInput" value="500" onclick="openBetKeypad('wheelBuyin')">
-            <span class="qty-suffix">€</span>
-            <button class="qty-btn" onclick="stepTableBuyin('wheel', 50)">+</button>
-          </div>
-          <button class="confirm-btn" style="margin-top:0;" onclick="sitDownAtTable('wheel')">Siediti al tavolo</button>
-        </div>
         <div class="stack-bar" id="wheelStackBar">
           <div class="stack-bar-info">
             <span class="stack-bar-label">Il tuo stack</span>
             <span class="stack-bar-value" id="wheelStackValue">€0,00</span>
           </div>
-          <button class="stack-bar-leave" onclick="leaveTable('wheel')">Lascia il tavolo</button>
+          <button class="stack-bar-leave" onclick="leaveTable(&#39;wheel&#39;)">Lascia il tavolo</button>
         </div>
 
         <div id="wheelBetView">
@@ -5495,24 +5535,14 @@
               <span class="luck-slider-label"><i class="ti ti-clover"></i> Fortuna</span>
               <span class="luck-slider-value" id="wheelLuckValue">0%</span>
             </div>
-            <input type="range" min="0" max="100" step="1" value="0" class="luck-slider" id="wheelLuckSlider" oninput="setLuckValue('wheel', this.value)">
+            <input type="range" min="0" max="100" step="1" value="0" class="luck-slider" id="wheelLuckSlider" oninput="setLuckValue(&#39;wheel&#39;, this.value)">
             <p class="luck-slider-hint">0% = gioco normale · 100% = vittoria garantita</p>
           </div>
           <p class="preset-label">Scegli la casella</p>
           <div class="bet-type-row wheel-spot-row" id="wheelSpotGrid"></div>
 
-          <p class="preset-label">Importo puntata</p>
-          <div class="bet-level-tabs" id="wheelBetLevelTabs"></div>
-          <div class="preset-grid" id="wheelBetPresetGrid"></div>
-
-          <div class="qty-row">
-            <button class="qty-btn" onclick="stepWheelBet(-5)">−</button>
-            <input type="text" inputmode="none" readonly class="qty-input bet-amount-tap" id="wheelBetInput" value="10" onclick="openBetKeypad('wheel')">
-            <span class="qty-suffix">€</span>
-            <button class="qty-btn" onclick="stepWheelBet(5)">+</button>
-          </div>
-
-          <button class="confirm-btn" id="wheelSpinBtn" onclick="uniBetAction('wheel','wheel',uniBalance(),()=>spinWheelGame())" style="background:#C9A227;color:#FFFFFF;">Gira la ruota</button>
+          <input type="hidden" id="wheelBetInput" value="10">
+          <button class="game-cta gold" id="wheelSpinBtn" onclick="promptGameBet(&#39;wheel&#39;)">Fai la tua puntata</button>
         </div>
 
         <div class="wheel-spin-overlay" id="wheelSpinView">
@@ -5560,7 +5590,7 @@
               <span class="luck-slider-label"><i class="ti ti-clover"></i> Fortuna</span>
               <span class="luck-slider-value" id="draw5LuckValue">0%</span>
             </div>
-            <input type="range" min="0" max="100" step="1" value="0" class="luck-slider" id="draw5LuckSlider" oninput="setLuckValue('draw5', this.value)">
+            <input type="range" min="0" max="100" step="1" value="0" class="luck-slider" id="draw5LuckSlider" oninput="setLuckValue(&#39;draw5&#39;, this.value)">
             <p class="luck-slider-hint">0% = gioco normale · 100% = le carte che peschi al cambio completano una mano vincente</p>
           </div>
           <p class="preset-label" style="margin-top:0;">Contro chi giochi</p>
@@ -5574,17 +5604,8 @@
           <p class="preset-label">Difficoltà avversari</p>
           <div class="mode-toggle" id="draw5DifficultyToggle" style="grid-template-columns:repeat(3,1fr);"></div>
 
-          <p class="preset-label">Punta per la mano (buy-in)</p>
-          <div class="bet-level-tabs" id="draw5BuyinLevelTabs"></div>
-          <div class="preset-grid" id="draw5BuyinPresetGrid"></div>
-          <div class="qty-row">
-            <button class="qty-btn" onclick="stepDraw5Buyin(-10)">−</button>
-            <input type="text" inputmode="none" readonly class="qty-input bet-amount-tap" id="draw5BuyinInput" value="50" onclick="openBetKeypad('draw5Buyin')">
-            <span class="qty-suffix">€</span>
-            <button class="qty-btn" onclick="stepDraw5Buyin(10)">+</button>
-          </div>
           <p class="preset-label" style="margin-top:14px;" id="draw5SetupNote">Tu e gli avversari puntate lo stesso importo (buy-in). Si pagano automaticamente piccolo e grande buio, poi si ricevono le 5 carte e si punta; dopo si sceglie quali cambiare; infine si punta un'ultima volta prima dello showdown. Le fiches restano tue finché non lasci il tavolo: puoi giocare tutte le mani che vuoi e uscire quando vuoi, con quello che ti rimane.</p>
-          <button class="confirm-btn" id="startDraw5HandBtn" onclick="startDraw5Hand()" style="background:#6B3FA0;color:#FFFFFF;">Siediti al tavolo</button>
+          <button class="game-cta violet" id="startDraw5HandBtn" onclick="startDraw5Hand()">Inizia la mano</button>
         </div>
 
         <div id="draw5Table" style="display:none;">
@@ -5608,15 +5629,7 @@
           <div class="poker-actions" id="draw5Actions"></div>
 
           <div id="draw5BetWrap" style="display:none;">
-            <div class="bet-level-tabs" id="draw5BetLevelTabs"></div>
-            <div class="preset-grid" id="draw5BetPresetGrid"></div>
-            <div class="qty-row">
-              <button class="qty-btn" onclick="stepDraw5Bet(-5)">−</button>
-              <input type="text" inputmode="none" readonly class="qty-input bet-amount-tap" id="draw5BetInput" value="10" onclick="openBetKeypad('draw5Bet')">
-              <span class="qty-suffix">€</span>
-              <button class="qty-btn" onclick="stepDraw5Bet(5)">+</button>
-            </div>
-            <button class="confirm-btn" style="background:#6B3FA0;color:#FFFFFF;" onclick="confirmDraw5Bet()">Conferma</button>
+            <input type="hidden" id="draw5BetInput" value="10">
           </div>
 
           <div class="roulette-result" id="draw5Result" style="display:none;">
@@ -5629,29 +5642,19 @@
       </div>
 
       <div id="slotsSection" style="display:none;">
-        <div class="table-buyin-bar" id="slotsBuyinBar">
-          <p class="table-buyin-label">Quanto porti al tavolo?</p>
-          <div class="qty-row">
-            <button class="qty-btn" onclick="stepTableBuyin('slots', -50)">−</button>
-            <input type="text" inputmode="none" readonly class="qty-input bet-amount-tap" id="slotsBuyinInput" value="500" onclick="openBetKeypad('slotsBuyin')">
-            <span class="qty-suffix">€</span>
-            <button class="qty-btn" onclick="stepTableBuyin('slots', 50)">+</button>
-          </div>
-          <button class="confirm-btn" style="margin-top:0;" onclick="sitDownAtTable('slots')">Siediti al tavolo</button>
-        </div>
         <div class="stack-bar" id="slotsStackBar">
           <div class="stack-bar-info">
             <span class="stack-bar-label">Il tuo stack</span>
             <span class="stack-bar-value" id="slotsStackValue">€0,00</span>
           </div>
-          <button class="stack-bar-leave" onclick="leaveTable('slots')">Lascia il tavolo</button>
+          <button class="stack-bar-leave" onclick="leaveTable(&#39;slots&#39;)">Lascia il tavolo</button>
         </div>
         <div class="luck-slider-wrap">
           <div class="luck-slider-head">
             <span class="luck-slider-label"><i class="ti ti-clover"></i> Fortuna</span>
             <span class="luck-slider-value" id="slotsLuckValue">0%</span>
           </div>
-          <input type="range" min="0" max="100" step="1" value="0" class="luck-slider" id="slotsLuckSlider" oninput="setLuckValue('slots', this.value)">
+          <input type="range" min="0" max="100" step="1" value="0" class="luck-slider" id="slotsLuckSlider" oninput="setLuckValue(&#39;slots&#39;, this.value)">
           <p class="luck-slider-hint">0% = gioco normale · 100% = vittoria garantita</p>
         </div>
 
@@ -5663,18 +5666,9 @@
           <div class="slot-reel" id="slotReel2"><div class="slot-symbol" id="slotSymbol2"></div></div>
         </div>
 
-        <p class="preset-label" style="margin-top:0;">Punta per giro</p>
-        <div class="bet-level-tabs" id="slotsBetLevelTabs"></div>
-        <div class="preset-grid" id="slotsBetPresetGrid"></div>
-        <div class="qty-row">
-          <button class="qty-btn" onclick="stepSlotsBet(-1)">−</button>
-          <input type="text" inputmode="none" readonly class="qty-input bet-amount-tap" id="slotsBetInput" value="5" onclick="openBetKeypad('slots')">
-          <span class="qty-suffix">€</span>
-          <button class="qty-btn" onclick="stepSlotsBet(1)">+</button>
-        </div>
-
         <p class="poker-status" id="slotsStatus">Punta e tira la leva.</p>
-        <button class="confirm-btn" id="slotsSpinBtn" style="background:#B45A2E;color:#FFFFFF;" onclick="uniBetAction('slots','slots',uniBalance(),()=>spinSlots())">Tira la leva</button>
+        <input type="hidden" id="slotsBetInput" value="5">
+        <button class="game-cta rust" id="slotsSpinBtn" onclick="promptGameBet(&#39;slots&#39;)">Fai la tua puntata</button>
 
         <div class="roulette-result" id="slotsResult" style="display:none;">
           <p class="roulette-result-number" id="slotsResultTitle">—</p>
@@ -5684,44 +5678,49 @@
     </div>
 
 
-    <section class="uni-chip-dock" id="uniChipDock" aria-label="Banco fiches universale">
-      <div class="uni-dock-head"><span id="uniGameLabel">Puntata</span><strong id="uniTotal">€0,00</strong><button type="button" id="uniClear">Svuota</button></div>
-      <div class="uni-dock-body">
-        <div class="uni-stack-zone" id="uniStackZone"><div class="uni-stack empty" id="uniStack"><div id="uniStackChips"></div></div><span class="uni-drag-hint" id="uniDragHint">tieni e trascina al centro</span></div>
-        <div class="uni-tray" id="uniTray"></div>
-      </div>
-      <p class="uni-hint" id="uniHint">Tocca una fiche per aggiungerla, poi trascina la pila sul tavolo.</p>
-    </section>
+  </div>
 
-    <div class="bet-keypad-overlay" id="betKeypadOverlay">
-      <button class="bet-keypad-close" onclick="closeBetKeypad()">✕</button>
-      <p class="bet-keypad-title" id="betKeypadTitle">Importo puntata</p>
-      <div class="amount-display">
-        <span class="amount-currency">€</span>
-        <span class="amount-value" id="betKeypadValue">0,00</span>
+  <!-- TASTIERINO IMPORTI UNIVERSALE: buy-in dei giochi e puntate libere -->
+  <div class="screen" id="amountPadScreen">
+    <div class="ap-head">
+      <button class="close-btn" onclick="amountPadCancel()" aria-label="Annulla"><i class="ti ti-x"></i></button>
+      <div class="ap-titles">
+        <p class="ap-title" id="amountPadTitle">Importo</p>
+        <p class="ap-sub" id="amountPadSub"></p>
       </div>
-      <div class="keypad-grid">
-        <button class="key" onclick="pressBetKey('1')">1</button>
-        <button class="key" onclick="pressBetKey('2')">2</button>
-        <button class="key" onclick="pressBetKey('3')">3</button>
-        <button class="key" onclick="pressBetKey('4')">4</button>
-        <button class="key" onclick="pressBetKey('5')">5</button>
-        <button class="key" onclick="pressBetKey('6')">6</button>
-        <button class="key" onclick="pressBetKey('7')">7</button>
-        <button class="key" onclick="pressBetKey('8')">8</button>
-        <button class="key" onclick="pressBetKey('9')">9</button>
-        <div class="key empty"></div>
-        <button class="key" onclick="pressBetKey('0')">0</button>
-        <button class="key back" onclick="pressBetKey('back')"><i class="ti ti-backspace"></i></button>
-      </div>
-      <button class="confirm-btn" style="background:var(--accent);color:#FFFFFF;" onclick="confirmBetKeypad()">Conferma</button>
+      <div style="width:38px;flex-shrink:0;"></div>
     </div>
+
+    <div class="amount-display">
+      <span class="amount-currency">€</span>
+      <span class="amount-value" id="amountPadValue">0,00</span>
+    </div>
+    <p class="ap-error" id="amountPadError"></p>
+
+    <div class="keypad-grid">
+      <button class="key" onclick="amountPadPress(&#39;1&#39;)">1</button>
+      <button class="key" onclick="amountPadPress(&#39;2&#39;)">2</button>
+      <button class="key" onclick="amountPadPress(&#39;3&#39;)">3</button>
+      <button class="key" onclick="amountPadPress(&#39;4&#39;)">4</button>
+      <button class="key" onclick="amountPadPress(&#39;5&#39;)">5</button>
+      <button class="key" onclick="amountPadPress(&#39;6&#39;)">6</button>
+      <button class="key" onclick="amountPadPress(&#39;7&#39;)">7</button>
+      <button class="key" onclick="amountPadPress(&#39;8&#39;)">8</button>
+      <button class="key" onclick="amountPadPress(&#39;9&#39;)">9</button>
+      <button class="key" onclick="amountPadPress(&#39;clear&#39;)" aria-label="Azzera">C</button>
+      <button class="key" onclick="amountPadPress(&#39;0&#39;)">0</button>
+      <button class="key back" onclick="amountPadPress(&#39;back&#39;)" aria-label="Cancella"><i class="ti ti-backspace"></i></button>
+    </div>
+
+    <button class="game-cta" id="amountPadConfirmBtn" onclick="amountPadConfirm()" disabled="">Conferma</button>
+    <button class="ap-cancel" onclick="amountPadCancel()">Annulla</button>
   </div>
 
   <!-- PAGAMENTO 1/3: SCELTA CATEGORIA (sostituisce la vecchia lista contatti) -->
+
   <div class="screen sheet" id="payCategoryScreen">
     <div class="sheet-nav">
-      <button class="round-btn" onclick="closeSheet('payCategoryScreen')" aria-label="Indietro"><i class="ti ti-chevron-left"></i></button>
+      <button class="round-btn" onclick="closeSheet(&#39;payCategoryScreen&#39;)" aria-label="Indietro"><i class="ti ti-chevron-left"></i></button>
       <p class="sheet-nav-title">Paga una spesa</p>
     </div>
 
@@ -5732,8 +5731,8 @@
     </div>
 
     <div class="underline-tabs">
-      <button class="underline-tab active" id="catTabAll" onclick="setCategoryTab('all')">Tutte</button>
-      <button class="underline-tab" id="catTabRecent" onclick="setCategoryTab('recent')">Recenti</button>
+      <button class="underline-tab active" id="catTabAll" onclick="setCategoryTab(&#39;all&#39;)">Tutte</button>
+      <button class="underline-tab" id="catTabRecent" onclick="setCategoryTab(&#39;recent&#39;)">Recenti</button>
     </div>
 
     <div class="cat-list" id="categoryList"></div>
@@ -5753,33 +5752,33 @@
     </div>
 
     <div class="amount-display">
-      <span class="amount-currency">&euro;</span>
+      <span class="amount-currency">€</span>
       <span class="amount-value" id="payAmountValue">0,00</span>
     </div>
-    <p class="amount-note" id="payAmountNote">Disponibili &euro;0,00</p>
+    <p class="amount-note" id="payAmountNote">Disponibili €0,00</p>
 
     <div class="keypad-grid">
-      <button class="key" onclick="pressPayKey('1')">1</button>
-      <button class="key" onclick="pressPayKey('2')">2</button>
-      <button class="key" onclick="pressPayKey('3')">3</button>
-      <button class="key" onclick="pressPayKey('4')">4</button>
-      <button class="key" onclick="pressPayKey('5')">5</button>
-      <button class="key" onclick="pressPayKey('6')">6</button>
-      <button class="key" onclick="pressPayKey('7')">7</button>
-      <button class="key" onclick="pressPayKey('8')">8</button>
-      <button class="key" onclick="pressPayKey('9')">9</button>
+      <button class="key" onclick="pressPayKey(&#39;1&#39;)">1</button>
+      <button class="key" onclick="pressPayKey(&#39;2&#39;)">2</button>
+      <button class="key" onclick="pressPayKey(&#39;3&#39;)">3</button>
+      <button class="key" onclick="pressPayKey(&#39;4&#39;)">4</button>
+      <button class="key" onclick="pressPayKey(&#39;5&#39;)">5</button>
+      <button class="key" onclick="pressPayKey(&#39;6&#39;)">6</button>
+      <button class="key" onclick="pressPayKey(&#39;7&#39;)">7</button>
+      <button class="key" onclick="pressPayKey(&#39;8&#39;)">8</button>
+      <button class="key" onclick="pressPayKey(&#39;9&#39;)">9</button>
       <div class="key empty"></div>
-      <button class="key" onclick="pressPayKey('0')">0</button>
-      <button class="key back" onclick="pressPayKey('back')"><i class="ti ti-backspace"></i></button>
+      <button class="key" onclick="pressPayKey(&#39;0&#39;)">0</button>
+      <button class="key back" onclick="pressPayKey(&#39;back&#39;)"><i class="ti ti-backspace"></i></button>
     </div>
 
-    <button class="confirm-btn pay" id="payAmountConfirmBtn" disabled onclick="confirmPayAmount()">Continua</button>
+    <button class="confirm-btn pay" id="payAmountConfirmBtn" disabled="" onclick="confirmPayAmount()">Continua</button>
   </div>
 
   <!-- PAGAMENTO 3/3: CONFERMA, POI POS/NFC -->
   <div class="screen sheet" id="payConfirmScreen">
     <div class="sheet-nav">
-      <button class="round-btn" onclick="closeSheet('payConfirmScreen')" aria-label="Indietro"><i class="ti ti-chevron-left"></i></button>
+      <button class="round-btn" onclick="closeSheet(&#39;payConfirmScreen&#39;)" aria-label="Indietro"><i class="ti ti-chevron-left"></i></button>
       <p class="sheet-nav-title">Conferma</p>
     </div>
 
@@ -5792,14 +5791,14 @@
         </div>
       </div>
       <p class="confirm-amount-label">IMPORTO</p>
-      <p class="confirm-amount" id="payConfirmAmount">&euro;0,00</p>
+      <p class="confirm-amount" id="payConfirmAmount">€0,00</p>
       <div class="confirm-meta-row">
         <p class="confirm-meta-label">Conto</p>
         <p class="confirm-meta-value" id="payConfirmAccount">Conto principale</p>
       </div>
       <div class="confirm-meta-row">
         <p class="confirm-meta-label">Saldo dopo</p>
-        <p class="confirm-meta-value" id="payConfirmAfter">&euro;0,00</p>
+        <p class="confirm-meta-value" id="payConfirmAfter">€0,00</p>
       </div>
     </div>
 
@@ -5814,7 +5813,7 @@
   <!-- CATEGORIA: CREAZIONE / MODIFICA -->
   <div class="screen sheet" id="categoryEditorScreen">
     <div class="sheet-nav">
-      <button class="round-btn" onclick="closeSheet('categoryEditorScreen')" aria-label="Indietro"><i class="ti ti-chevron-left"></i></button>
+      <button class="round-btn" onclick="closeSheet(&#39;categoryEditorScreen&#39;)" aria-label="Indietro"><i class="ti ti-chevron-left"></i></button>
       <p class="sheet-nav-title" id="categoryEditorTitle">Nuova categoria</p>
     </div>
 
@@ -5824,12 +5823,12 @@
     <p class="field-label">ICONA</p>
     <div class="icon-picker" id="categoryIconPicker"></div>
 
-    <button class="confirm-btn pay" id="categorySaveBtn" disabled onclick="saveCategoryFromEditor()">Salva categoria</button>
+    <button class="confirm-btn pay" id="categorySaveBtn" disabled="" onclick="saveCategoryFromEditor()">Salva categoria</button>
     <button class="danger-btn" id="categoryDeleteBtn" style="display:none;" onclick="deleteCategoryFromEditor()">Elimina categoria</button>
   </div>
 
   <!-- MENU CONTESTUALE CATEGORIA -->
-  <div class="mini-sheet" id="categoryActionSheet" onclick="if(event.target===this) closeMiniSheet('categoryActionSheet')">
+  <div class="mini-sheet" id="categoryActionSheet" onclick="if(event.target===this) closeMiniSheet(&#39;categoryActionSheet&#39;)">
     <div class="mini-sheet-panel">
       <div class="mini-grip"></div>
       <p class="mini-sheet-title" id="categoryActionTitle">Categoria</p>
@@ -5840,25 +5839,25 @@
   </div>
 
   <!-- ALTRE AZIONI -->
-  <div class="mini-sheet" id="moreActionsSheet" onclick="if(event.target===this) closeMiniSheet('moreActionsSheet')">
+  <div class="mini-sheet" id="moreActionsSheet" onclick="if(event.target===this) closeMiniSheet(&#39;moreActionsSheet&#39;)">
     <div class="mini-sheet-panel">
       <div class="mini-grip"></div>
       <p class="mini-sheet-title">Tutte le azioni</p>
-      <button class="mini-action" onclick="closeMiniSheet('moreActionsSheet');openContactless()"><i class="ti ti-wifi"></i><span>Pagamento contactless</span><small>Volume +</small></button>
-      <button class="mini-action" onclick="closeMiniSheet('moreActionsSheet');openKeypad('pay')"><i class="ti ti-send"></i><span>Invia soldi (importo libero)</span></button>
-      <button class="mini-action" onclick="closeMiniSheet('moreActionsSheet');openTransfer()"><i class="ti ti-arrows-exchange"></i><span>Trasferisci tra conti</span></button>
-      <button class="mini-action" onclick="closeMiniSheet('moreActionsSheet');openTwitch()"><i class="ti ti-brand-twitch"></i><span>Regala sub Twitch</span></button>
-      <button class="mini-action" onclick="closeMiniSheet('moreActionsSheet');openNewAccount()"><i class="ti ti-plus"></i><span>Nuovo conto</span></button>
-      <button class="mini-action" onclick="closeMiniSheet('moreActionsSheet');openPayFlow()"><i class="ti ti-category-2"></i><span>Gestisci categorie di spesa</span></button>
-      <button class="mini-action" onclick="closeMiniSheet('moreActionsSheet');switchTab('games')"><i class="ti ti-dice-5"></i><span>Sala giochi</span></button>
+      <button class="mini-action" onclick="closeMiniSheet(&#39;moreActionsSheet&#39;);openContactless()"><i class="ti ti-wifi"></i><span>Pagamento contactless</span><small>Volume +</small></button>
+      <button class="mini-action" onclick="closeMiniSheet(&#39;moreActionsSheet&#39;);openKeypad(&#39;pay&#39;)"><i class="ti ti-send"></i><span>Invia soldi (importo libero)</span></button>
+      <button class="mini-action" onclick="closeMiniSheet(&#39;moreActionsSheet&#39;);openTransfer()"><i class="ti ti-arrows-exchange"></i><span>Trasferisci tra conti</span></button>
+      <button class="mini-action" onclick="closeMiniSheet(&#39;moreActionsSheet&#39;);openTwitch()"><i class="ti ti-brand-twitch"></i><span>Regala sub Twitch</span></button>
+      <button class="mini-action" onclick="closeMiniSheet(&#39;moreActionsSheet&#39;);openNewAccount()"><i class="ti ti-plus"></i><span>Nuovo conto</span></button>
+      <button class="mini-action" onclick="closeMiniSheet(&#39;moreActionsSheet&#39;);openPayFlow()"><i class="ti ti-category-2"></i><span>Gestisci categorie di spesa</span></button>
+      <button class="mini-action" onclick="closeMiniSheet(&#39;moreActionsSheet&#39;);switchTab(&#39;games&#39;)"><i class="ti ti-dice-5"></i><span>Sala giochi</span></button>
     </div>
   </div>
 
   <!-- NOTIFICHE -->
-  <div class="mini-sheet" id="notificationsSheet" onclick="if(event.target===this) closeMiniSheet('notificationsSheet')">
+  <div class="mini-sheet" id="notificationsSheet" onclick="if(event.target===this) closeMiniSheet(&#39;notificationsSheet&#39;)">
     <div class="mini-sheet-panel">
       <div class="mini-grip"></div>
-      <p class="mini-sheet-title">Novit&agrave; sul conto</p>
+      <p class="mini-sheet-title">Novità sul conto</p>
       <div id="notificationsList"></div>
     </div>
   </div>
@@ -5872,7 +5871,7 @@
   <!-- SUCCESS SCREEN -->
   <div class="screen" id="successScreen">
     <div class="tick-circle">
-      <svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6"></path></svg>
     </div>
     <p class="success-amount" id="successAmount">−€25,00</p>
     <p class="success-memo" id="successMemo"></p>
@@ -5880,56 +5879,56 @@
   </div>
 
   <!-- SCHERMATA PAGAMENTO CONTACTLESS NFC (simulato) -->
-  <div class='nfc-screen' id='nfcScreen' data-state='IDLE' role='dialog' aria-modal='true' aria-live='polite' aria-label='Pagamento contactless'>
-    <button class='nfc-cancel' id='nfcCancelBtn' type='button'>Annulla</button>
+  <div class="nfc-screen" id="nfcScreen" data-state="IDLE" role="dialog" aria-modal="true" aria-live="polite" aria-label="Pagamento contactless">
+    <button class="nfc-cancel" id="nfcCancelBtn" type="button">Annulla</button>
 
-    <div class='nfc-head'>
-      <p class='nfc-kicker' id='nfcKicker'>Pagamento contactless</p>
-      <p class='nfc-amount' id='nfcAmount'>&euro;0,00</p>
-      <p class='nfc-merchant' id='nfcMerchant'>&mdash;</p>
+    <div class="nfc-head">
+      <p class="nfc-kicker" id="nfcKicker">Pagamento contactless</p>
+      <p class="nfc-amount" id="nfcAmount">€0,00</p>
+      <p class="nfc-merchant" id="nfcMerchant">—</p>
     </div>
 
-    <div class='nfc-stage'>
-      <div class='nfc-halo'></div>
-      <div class='nfc-waves'>
-        <span style='--i:0'></span><span style='--i:1'></span><span style='--i:2'></span><span style='--i:3'></span>
+    <div class="nfc-stage">
+      <div class="nfc-halo"></div>
+      <div class="nfc-waves">
+        <span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span><span style="--i:3"></span>
       </div>
-      <div class='nfc-scanline'></div>
+      <div class="nfc-scanline"></div>
 
-      <div class='nfc-core'>
-        <svg class='nfc-glyph' viewBox='0 0 132 132' aria-hidden='true'>
-          <circle cx='40' cy='66' r='5' style='--i:0'/>
-          <path style='--i:1' d='M56 48a26 26 0 0 1 0 36'/>
-          <path style='--i:2' d='M72 38a42 42 0 0 1 0 56'/>
-          <path style='--i:3' d='M88 28a58 58 0 0 1 0 76'/>
+      <div class="nfc-core">
+        <svg class="nfc-glyph" viewBox="0 0 132 132" aria-hidden="true">
+          <circle cx="40" cy="66" r="5" style="--i:0"></circle>
+          <path style="--i:1" d="M56 48a26 26 0 0 1 0 36"></path>
+          <path style="--i:2" d="M72 38a42 42 0 0 1 0 56"></path>
+          <path style="--i:3" d="M88 28a58 58 0 0 1 0 76"></path>
         </svg>
-        <svg class='nfc-ring' viewBox='0 0 132 132' aria-hidden='true'>
-          <circle cx='66' cy='66' r='52'/>
+        <svg class="nfc-ring" viewBox="0 0 132 132" aria-hidden="true">
+          <circle cx="66" cy="66" r="52"></circle>
         </svg>
-        <svg class='nfc-mark nfc-check' viewBox='0 0 132 132' aria-hidden='true'>
-          <circle class='disc' cx='66' cy='66' r='52'/>
-          <path d='M45 67 l14 15 l28 -33'/>
+        <svg class="nfc-mark nfc-check" viewBox="0 0 132 132" aria-hidden="true">
+          <circle class="disc" cx="66" cy="66" r="52"></circle>
+          <path d="M45 67 l14 15 l28 -33"></path>
         </svg>
-        <svg class='nfc-mark nfc-cross' viewBox='0 0 132 132' aria-hidden='true'>
-          <circle class='disc' cx='66' cy='66' r='52'/>
-          <path d='M50 50 l32 32 M82 50 l-32 32'/>
+        <svg class="nfc-mark nfc-cross" viewBox="0 0 132 132" aria-hidden="true">
+          <circle class="disc" cx="66" cy="66" r="52"></circle>
+          <path d="M50 50 l32 32 M82 50 l-32 32"></path>
         </svg>
       </div>
     </div>
 
-    <div class='nfc-status'>
-      <p class='nfc-state-main' id='nfcStateMain'>Avvicina al POS</p>
-      <p class='nfc-state-sub' id='nfcStateSub'>Tieni il telefono vicino al terminale</p>
+    <div class="nfc-status">
+      <p class="nfc-state-main" id="nfcStateMain">Avvicina al POS</p>
+      <p class="nfc-state-sub" id="nfcStateSub">Tieni il telefono vicino al terminale</p>
     </div>
 
-    <div class='nfc-foot'>
-      <p class='nfc-hint' id='nfcHint'>Premi <b>Volume +</b> per confermare</p>
-      <p class='nfc-hint-alt' id='nfcHintAlt'></p>
-      <button class='nfc-volkey' id='nfcVolBtn' type='button' aria-label='Conferma il pagamento'><span class='key' aria-hidden='true'>+</span>Volume + &middot; conferma</button>
-      <div class='nfc-timer'><span id='nfcTimerBar'></span></div>
+    <div class="nfc-foot">
+      <p class="nfc-hint" id="nfcHint">Premi <b>Volume +</b> per confermare</p>
+      <p class="nfc-hint-alt" id="nfcHintAlt"></p>
+      <button class="nfc-volkey" id="nfcVolBtn" type="button" aria-label="Conferma il pagamento"><span class="key" aria-hidden="true">+</span>Volume + · conferma</button>
+      <div class="nfc-timer"><span id="nfcTimerBar"></span></div>
     </div>
 
-    <div class='nfc-debug' id='nfcDebug'></div>
+    <div class="nfc-debug" id="nfcDebug"></div>
   </div>
 
   <!-- FUOCHI D'ARTIFICIO PER LE GRANDI VINCITE -->
@@ -5957,7 +5956,7 @@
   <div class="modal-overlay" id="exportFallbackOverlay">
     <div class="modal-box export-fallback-box">
       <p class="modal-message">Copia questo testo e salvalo come file .json (es. incollandolo in un'app di note o inviandolo a te stesso), oppure tocca "Copia" e incollalo dove preferisci.</p>
-      <textarea class="export-fallback-textarea" id="exportFallbackText" readonly onclick="this.select();"></textarea>
+      <textarea class="export-fallback-textarea" id="exportFallbackText" readonly="" onclick="this.select();"></textarea>
       <div class="modal-actions">
         <button class="modal-btn ok" onclick="copyExportFallback()">Copia</button>
         <button class="modal-btn cancel" onclick="closeExportFallback()">Chiudi</button>
@@ -6559,51 +6558,11 @@ const TIERS = [
   {key:3, name:'Tier 3', price:24.99}
 ];
 const PRESETS = [1,5,10,25,50,100];
-const BET_PRESETS = [5,10,25,50,100];
 
 /* Sequenza reale della ruota europea (0-36) e tipi di puntata */
 const WHEEL_ORDER = [0,32,15,19,4,21,2,25,17,34,6,27,13,36,11,30,8,23,10,5,24,16,33,1,20,14,31,9,22,18,29,7,28,12,35,3,26];
 const RED_NUMBERS = [1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36];
 
-const OUTSIDE_BETS = [
-  {key:'red', label:'Rosso', payout:2},
-  {key:'black', label:'Nero', payout:2},
-  {key:'even', label:'Pari', payout:2},
-  {key:'odd', label:'Dispari', payout:2},
-  {key:'low', label:'1-18', payout:2},
-  {key:'high', label:'19-36', payout:2},
-  {key:'dozen1', label:'1ª dozzina', payout:3},
-  {key:'dozen2', label:'2ª dozzina', payout:3},
-  {key:'dozen3', label:'3ª dozzina', payout:3},
-  {key:'col1', label:'Colonna 1', payout:3},
-  {key:'col2', label:'Colonna 2', payout:3},
-  {key:'col3', label:'Colonna 3', payout:3}
-];
-
-function outsideBetWins(key, n){
-  switch(key){
-    case 'red': return numberColor(n) === 'red';
-    case 'black': return numberColor(n) === 'black';
-    case 'even': return n !== 0 && n % 2 === 0;
-    case 'odd': return n % 2 === 1;
-    case 'low': return n >= 1 && n <= 18;
-    case 'high': return n >= 19 && n <= 36;
-    case 'dozen1': return n >= 1 && n <= 12;
-    case 'dozen2': return n >= 13 && n <= 24;
-    case 'dozen3': return n >= 25 && n <= 36;
-    case 'col1': return n !== 0 && n % 3 === 1;
-    case 'col2': return n !== 0 && n % 3 === 2;
-    case 'col3': return n !== 0 && n % 3 === 0;
-  }
-  return false;
-}
-
-/* Layout classico del tavolo: 3 righe x 12 colonne, piu' lo 0 */
-const NUMBER_GRID_ROWS = [
-  [3,6,9,12,15,18,21,24,27,30,33,36],
-  [2,5,8,11,14,17,20,23,26,29,32,35],
-  [1,4,7,10,13,16,19,22,25,28,31,34]
-];
 
 const THEMES = {
   indaco:   { label:'Indaco',   bg:'#0F0F16',
@@ -6672,11 +6631,13 @@ let currentTheme = 'indaco';
 let currentMode = 'light';
 const MAX_CENTS = 99999999999; /* consente ricariche/pagamenti ben oltre il milione */
 
-let betCategory = 'outside'; /* outside | straight | split */
 let transferCents = 0;
 let transferDestId = null;
-let selectedOutsideKey = 'red';
-let selectedNumbers = [];
+/* puntate piazzate sul tabellone della roulette per il giro in corso */
+let rouletteBets = [];
+let rlComboMode = null;  /* split | street | corner | line mentre si compone una combinazione */
+let rlComboPick = [];
+let rlBetSeq = 0;
 let rouletteAbsRotation = 0;
 let rouletteModRotation = 0;
 let rouletteBallRotation = 0;
@@ -6772,38 +6733,16 @@ function autoLeaveTableWipedOut(game){
 }
 /* aggiorna la barra buy-in / stack visibile in cima alla sezione del gioco */
 function updateStackBar(game){
-  const buyinBar = document.getElementById(game+'BuyinBar');
   const stackBar = document.getElementById(game+'StackBar');
-  if(!buyinBar || !stackBar) return;
+  if(!stackBar) return;
   const active = hasSession(game);
-  buyinBar.style.display = active ? 'none' : 'block';
   stackBar.style.display = active ? 'flex' : 'none';
+  /* lasciando il tavolo il tabellone della roulette si svuota */
+  if(game === 'roulette' && !active && rouletteBets.length) rlClearBets();
   if(active){
     const valueEl = document.getElementById(game+'StackValue');
     if(valueEl) valueEl.textContent = '€' + formatEUR(getSessionStack(game));
   }
-}
-function stepTableBuyin(game, delta){
-  const input = document.getElementById(game+'BuyinInput');
-  let v = parseFloat(input.value) || 0;
-  v = Math.max(1, v + delta);
-  input.value = v;
-}
-function sitDownAtTable(game, afterFn){
-  const acc = getAccount(currentAccountId);
-  const input = document.getElementById(game+'BuyinInput');
-  const amount = parseFloat(input.value) || 0;
-  if(amount <= 0) return;
-  if(amount > acc.balance){
-    const bar = document.getElementById(game+'BuyinBar');
-    bar.classList.add('shake');
-    setTimeout(()=>bar.classList.remove('shake'), 300);
-    return;
-  }
-  applyTransaction(acc, amount, 'out', `${GAME_LABELS[game]}: entra al tavolo con €${formatEUR(amount)}`);
-  startSession(game, amount);
-  updateStackBar(game);
-  if(afterFn) afterFn();
 }
 
 /* ---------- salvataggio dati in locale (persistenza) ---------- */
@@ -7382,34 +7321,11 @@ function buildWheelGameNumbers(){
   });
 }
 
-function renderWheelBetPreset(){
-  renderBetLevelTabs('wheel');
-  const grid = document.getElementById('wheelBetPresetGrid');
-  if(!grid) return;
-  grid.innerHTML = '';
-  const current = parseFloat(document.getElementById('wheelBetInput').value);
-  BET_LEVELS[betAmountLevel.wheel].forEach(p => {
-    const btn = document.createElement('button');
-    btn.className = 'preset-chip' + (current === p ? ' selected' : '');
-    btn.textContent = '€' + p;
-    btn.onclick = () => { document.getElementById('wheelBetInput').value = p; renderWheelBetPreset(); };
-    grid.appendChild(btn);
-  });
-}
-function stepWheelBet(delta){
-  const input = document.getElementById('wheelBetInput');
-  let v = parseFloat(input.value) || 0;
-  v = Math.max(1, v + delta);
-  input.value = v;
-  renderWheelBetPreset();
-}
 
 function spinWheelGame(){
   if(wheelSpinning) return;
   if(!hasSession('wheel')){
-    const bar = document.getElementById('wheelBuyinBar');
-    bar.classList.add('shake');
-    setTimeout(()=>bar.classList.remove('shake'), 300);
+    promptGameBuyIn('wheel');
     return;
   }
   const bet = parseFloat(document.getElementById('wheelBetInput').value) || 0;
@@ -7712,7 +7628,16 @@ function updateGameBalanceChip(){
   document.getElementById('gameBalanceValue').textContent = formatEUR(acc.balance);
 }
 
+/* il buy-in e' obbligatorio: senza sessione attiva si passa prima dal tastierino */
 function openGame(id){
+  if(!hasSession(id)){
+    promptGameBuyIn(id);
+    return;
+  }
+  enterGameScreen(id);
+}
+
+function enterGameScreen(id){
   ['rouletteSection','pokerSection','crapsSection','blackjackSection','wheelSection','draw5Section','slotsSection'].forEach(secId => {
     document.getElementById(secId).style.display = secId === id + 'Section' ? 'block' : 'none';
   });
@@ -7726,6 +7651,7 @@ function openGame(id){
   setBottomBarVisible(false);
   gf.classList.add('curtain-flash');
   setTimeout(()=>gf.classList.remove('curtain-flash'), 600);
+  if(id === 'roulette'){ rlRenderComboRow(); rlRenderBets(); }
   croupierSay('greet');
 }
 
@@ -8595,79 +8521,201 @@ function closeSheet(id){
   setBottomBarVisible(!document.querySelector('.sheet.open'));
 }
 
-/* ---------- livelli importo puntata + tastierino puntate (condiviso da tutti i giochi) ---------- */
-const BET_LEVELS = {
-  1: [5,10,25,50],
-  2: [50,100,250,500],
-  3: [500,1000,2500,5000]
-};
-const BET_LEVEL_LABELS = {1:'Base',2:'Medio',3:'Alto'};
-let betAmountLevel = { roulette:1, pokerBuyin:1, pokerBet:1, craps:1, bj:1, wheel:1, draw5Buyin:1, draw5Bet:1, slots:1, rouletteBuyin:1, crapsBuyin:1, bjBuyin:1, wheelBuyin:1, slotsBuyin:1 };
+/* ---------- TASTIERINO IMPORTI UNIVERSALE ----------
+   Un solo componente per buy-in e puntate: cifra sempre libera, decimali inclusi.
+   Sostituisce i vecchi livelli base/medio/alto, i preset fissi e il banco fiches. */
+const AMOUNT_PAD_MAX_CENTS = 9999999; /* 99.999,99 EUR */
+const AmountPad = { open:false, cents:0, maxCents:0, overMsg:'', fresh:false, onConfirm:null, onCancel:null };
 
-const BET_INPUT_MAP = {
-  roulette:     { inputId:'betInput',        gridId:'betPresetGrid',        tabsId:'betLevelTabs',        title:'Importo puntata',  onChange: () => { renderBetPresetGrid(); updatePotentialWin(); } },
-  pokerBuyin:   { inputId:'pokerBuyinInput',  gridId:'pokerBuyinPresetGrid', tabsId:'pokerBuyinLevelTabs', title:'Buy-in mano',      onChange: () => renderPokerBuyinPreset() },
-  pokerBet:     { inputId:'pokerBetInput',    gridId:'pokerBetPresetGrid',   tabsId:'pokerBetLevelTabs',   title:'Importo puntata',  onChange: () => renderPokerBetPreset() },
-  craps:        { inputId:'crapsBetInput',    gridId:'crapsBetPresetGrid',   tabsId:'crapsBetLevelTabs',   title:'Importo puntata',  onChange: () => renderCrapsBetPreset() },
-  bj:           { inputId:'bjBetInput',       gridId:'bjBetPresetGrid',      tabsId:'bjBetLevelTabs',      title:'Importo puntata',  onChange: () => renderBjBetPreset() },
-  wheel:        { inputId:'wheelBetInput',    gridId:'wheelBetPresetGrid',   tabsId:'wheelBetLevelTabs',   title:'Importo puntata',  onChange: () => renderWheelBetPreset() },
-  draw5Buyin:   { inputId:'draw5BuyinInput',  gridId:'draw5BuyinPresetGrid', tabsId:'draw5BuyinLevelTabs', title:'Buy-in mano',      onChange: () => renderDraw5BuyinPreset() },
-  draw5Bet:     { inputId:'draw5BetInput',    gridId:'draw5BetPresetGrid',   tabsId:'draw5BetLevelTabs',   title:'Importo puntata',  onChange: () => renderDraw5BetPreset() },
-  slots:        { inputId:'slotsBetInput',    gridId:'slotsBetPresetGrid',   tabsId:'slotsBetLevelTabs',   title:'Importo puntata',  onChange: () => renderSlotsBetPreset() },
-  rouletteBuyin:{ inputId:'rouletteBuyinInput', title:'Quanto porti al tavolo', onChange: () => {} },
-  crapsBuyin:   { inputId:'crapsBuyinInput',    title:'Quanto porti al tavolo', onChange: () => {} },
-  bjBuyin:      { inputId:'blackjackBuyinInput', title:'Quanto porti al tavolo', onChange: () => {} },
-  wheelBuyin:   { inputId:'wheelBuyinInput',    title:'Quanto porti al tavolo', onChange: () => {} },
-  slotsBuyin:   { inputId:'slotsBuyinInput',    title:'Quanto porti al tavolo', onChange: () => {} }
-};
-
-function renderBetLevelTabs(key){
-  const cfg = BET_INPUT_MAP[key];
-  const wrap = document.getElementById(cfg.tabsId);
-  if(!wrap) return;
-  wrap.innerHTML = [1,2,3].map(l => `<button class="bet-level-tab ${betAmountLevel[key]===l?'active':''}" onclick="setBetLevel('${key}',${l})">${BET_LEVEL_LABELS[l]}</button>`).join('');
-}
-function setBetLevel(key, level){
-  betAmountLevel[key] = level;
-  renderBetLevelTabs(key);
-  BET_INPUT_MAP[key].onChange();
+function openAmountPad(opts){
+  const o = opts || {};
+  AmountPad.open = true;
+  AmountPad.maxCents = Math.min(AMOUNT_PAD_MAX_CENTS, Math.max(0, Math.floor((Number(o.max) || 0) * 100)));
+  AmountPad.cents = Math.max(0, Math.round((Number(o.initial) || 0) * 100));
+  if(AmountPad.cents > AmountPad.maxCents) AmountPad.cents = AmountPad.maxCents;
+  /* il valore precompilato si vede subito, ma la prima cifra digitata lo sostituisce */
+  AmountPad.fresh = AmountPad.cents > 0;
+  AmountPad.overMsg = o.overMsg || 'Importo troppo alto';
+  AmountPad.onConfirm = typeof o.onConfirm === 'function' ? o.onConfirm : null;
+  AmountPad.onCancel = typeof o.onCancel === 'function' ? o.onCancel : null;
+  document.getElementById('amountPadTitle').textContent = o.title || 'Importo';
+  document.getElementById('amountPadSub').textContent = o.sub || '';
+  document.getElementById('amountPadConfirmBtn').textContent = o.confirmLabel || 'Conferma';
+  amountPadRefresh();
+  document.getElementById('amountPadScreen').classList.add('open');
 }
 
-let betKeypadKey = null;
-let betKeypadCents = 0;
-function legacyOpenBetKeypad(key){
-  const cfg = BET_INPUT_MAP[key];
-  if(!cfg) return;
-  betKeypadKey = key;
-  const currentVal = parseFloat(document.getElementById(cfg.inputId).value) || 0;
-  betKeypadCents = Math.round(currentVal*100);
-  document.getElementById('betKeypadTitle').textContent = cfg.title;
-  refreshBetKeypadDisplay();
-  document.getElementById('betKeypadOverlay').classList.add('show');
-}
-function refreshBetKeypadDisplay(){
-  document.getElementById('betKeypadValue').textContent = formatEUR(betKeypadCents/100);
-}
-function pressBetKey(k){
-  if(k === 'back'){
-    betKeypadCents = Math.floor(betKeypadCents/10);
-  } else {
-    if(betKeypadCents >= MAX_CENTS) return;
-    betKeypadCents = betKeypadCents*10 + parseInt(k, 10);
+function amountPadRefresh(){
+  const valueEl = document.getElementById('amountPadValue');
+  const btn = document.getElementById('amountPadConfirmBtn');
+  const errEl = document.getElementById('amountPadError');
+  if(!valueEl || !btn || !errEl) return;
+  valueEl.textContent = formatEUR(AmountPad.cents / 100);
+  let msg = '';
+  let ok = AmountPad.cents > 0;
+  if(AmountPad.maxCents <= 0){
+    ok = false;
+    msg = AmountPad.overMsg;
+  } else if(AmountPad.cents > AmountPad.maxCents){
+    ok = false;
+    msg = AmountPad.overMsg + ' (max \u20ac' + formatEUR(AmountPad.maxCents / 100) + ')';
   }
-  refreshBetKeypadDisplay();
+  errEl.textContent = msg;
+  btn.disabled = !ok;
 }
-function closeBetKeypad(){
-  document.getElementById('betKeypadOverlay').classList.remove('show');
-  betKeypadKey = null;
+
+function amountPadShake(){
+  const valueEl = document.getElementById('amountPadValue');
+  if(!valueEl) return;
+  valueEl.classList.remove('shake');
+  void valueEl.offsetWidth;
+  valueEl.classList.add('shake');
+  setTimeout(() => valueEl.classList.remove('shake'), 320);
 }
-function confirmBetKeypad(){
-  if(!betKeypadKey) return;
-  const cfg = BET_INPUT_MAP[betKeypadKey];
-  const val = Math.max(1, betKeypadCents/100);
-  document.getElementById(cfg.inputId).value = val;
-  cfg.onChange();
-  closeBetKeypad();
+
+function amountPadPress(k){
+  if(!AmountPad.open) return;
+  if(k === 'back'){
+    AmountPad.fresh = false;
+    AmountPad.cents = Math.floor(AmountPad.cents / 10);
+    amountPadRefresh();
+    return;
+  }
+  if(k === 'clear'){
+    AmountPad.fresh = false;
+    AmountPad.cents = 0;
+    amountPadRefresh();
+    return;
+  }
+  if(AmountPad.fresh){ AmountPad.cents = 0; AmountPad.fresh = false; }
+  const next = AmountPad.cents * 10 + parseInt(k, 10);
+  if(next > AMOUNT_PAD_MAX_CENTS){
+    amountPadShake();
+    return;
+  }
+  AmountPad.cents = next;
+  if(AmountPad.cents > AmountPad.maxCents) amountPadShake();
+  amountPadRefresh();
+}
+
+function amountPadHide(){
+  AmountPad.open = false;
+  const el = document.getElementById('amountPadScreen');
+  if(el) el.classList.remove('open');
+}
+
+function amountPadCancel(){
+  if(!AmountPad.open) return;
+  const cb = AmountPad.onCancel;
+  AmountPad.onConfirm = null;
+  AmountPad.onCancel = null;
+  amountPadHide();
+  if(cb) cb();
+}
+
+function amountPadConfirm(){
+  if(!AmountPad.open) return;
+  if(AmountPad.cents <= 0 || AmountPad.cents > AmountPad.maxCents){
+    amountPadShake();
+    return;
+  }
+  const amount = AmountPad.cents / 100;
+  const cb = AmountPad.onConfirm;
+  AmountPad.onConfirm = null;
+  AmountPad.onCancel = null;
+  amountPadHide();
+  if(cb) cb(amount);
+}
+
+/* ---------- BUY-IN OBBLIGATORIO PRIMA DI OGNI GIOCO ---------- */
+function gameBuyInMax(){
+  const acc = getAccount(currentAccountId);
+  return Math.max(0, Number(acc && acc.balance) || 0);
+}
+
+function promptGameBuyIn(game, afterFn){
+  const label = GAME_LABELS[game] || 'Tavolo';
+  openAmountPad({
+    title: 'Quanti soldi vuoi? ' + label,
+    sub: 'Saldo disponibile: \u20ac' + formatEUR(gameBuyInMax()),
+    max: gameBuyInMax(),
+    overMsg: 'Saldo insufficiente',
+    confirmLabel: 'Entra al gioco',
+    onConfirm: amount => {
+      if(!buyIntoGame(game, amount)) return;
+      if(afterFn) afterFn();
+      else enterGameScreen(game);
+    }
+  });
+}
+
+function buyIntoGame(game, amount){
+  const acc = getAccount(currentAccountId);
+  if(!acc || !(amount > 0) || amount > acc.balance) return false;
+  applyTransaction(acc, amount, 'out', `${GAME_LABELS[game]}: entra al tavolo con \u20ac${formatEUR(amount)}`);
+  startSession(game, amount);
+  if(game === 'poker' || game === 'draw5'){
+    gameSessions[game].tableBuyIn = amount;
+    saveState();
+  }
+  updateStackBar(game);
+  if(game === 'poker') updatePokerStackBar();
+  if(game === 'draw5') updateDraw5StackBar();
+  updateGameBalanceChip();
+  return true;
+}
+
+/* wrapper storico: il buy-in passa sempre dal tastierino libero */
+function sitDownAtTable(game, afterFn){
+  promptGameBuyIn(game, afterFn);
+}
+
+/* ---------- PUNTATE LIBERE DENTRO OGNI GIOCO ---------- */
+const GAME_BET_INPUTS = {
+  roulette:'betInput', craps:'crapsBetInput', blackjack:'bjBetInput', wheel:'wheelBetInput',
+  slots:'slotsBetInput', poker:'pokerBetInput', draw5:'draw5BetInput'
+};
+const GAME_BET_ACTIONS = {
+  craps: () => startCraps(),
+  blackjack: () => startBlackjack(),
+  wheel: () => spinWheelGame(),
+  slots: () => spinSlots()
+};
+
+/* giri in corso: durante una rotazione non si accettano nuove puntate */
+const GAME_BUSY = {
+  roulette: () => spinning,
+  wheel: () => wheelSpinning,
+  slots: () => slotsSpinning
+};
+
+/* apre il tastierino per una puntata: mai oltre lo stack della sessione */
+function promptGameBet(game, opts){
+  const o = opts || {};
+  if(!hasSession(game)){
+    promptGameBuyIn(game);
+    return;
+  }
+  if(GAME_BUSY[game] && GAME_BUSY[game]()) return;
+  const stack = getSessionStack(game);
+  const cap = o.max === undefined ? stack : Number(o.max);
+  const max = Math.max(0, Math.min(stack, isNaN(cap) ? stack : cap));
+  const inputId = o.inputId || GAME_BET_INPUTS[game];
+  const action = o.then || GAME_BET_ACTIONS[game];
+  openAmountPad({
+    title: o.title || 'Fai la tua puntata',
+    sub: o.sub || ('Stack al tavolo: \u20ac' + formatEUR(stack)),
+    max: max,
+    initial: o.initial,
+    overMsg: o.overMsg || 'Puntata oltre le fiches disponibili',
+    confirmLabel: o.confirmLabel || 'Punta',
+    onCancel: o.onCancel,
+    onConfirm: amount => {
+      const input = inputId ? document.getElementById(inputId) : null;
+      if(input) input.value = amount;
+      if(action) action();
+    }
+  });
 }
 
 /* ---------- keypad flow (transazioni conto: invia/ricarica) ---------- */
@@ -9225,205 +9273,420 @@ function buildWheelNumbers(){
   });
 }
 
-function switchBetCategory(cat){
-  betCategory = cat;
-  document.getElementById('outsideBetWrap').style.display = cat === 'outside' ? 'block' : 'none';
-  document.getElementById('straightBetWrap').style.display = cat === 'straight' ? 'block' : 'none';
-  document.getElementById('splitBetWrap').style.display = cat === 'split' ? 'block' : 'none';
-  renderCategoryTabs();
-  updatePotentialWin();
+/* ==================== TABELLONE ROULETTE CLASSICO ====================
+   Layout reale: 0 a sinistra, 1-36 in 3 righe x 12 colonne, colonne 2:1 a destra,
+   dozzine e puntate esterne sotto. Ogni casella e' cliccabile, si possono piazzare
+   piu' puntate nello stesso giro (importo libero da tastierino) e modificarle o
+   cancellarle prima di girare. Vincolo: mai rosso e nero nello stesso giro. */
+
+const RL_ROWS = [
+  [3,6,9,12,15,18,21,24,27,30,33,36],
+  [2,5,8,11,14,17,20,23,26,29,32,35],
+  [1,4,7,10,13,16,19,22,25,28,31,34]
+];
+
+function rlRange(from, to){
+  const out = [];
+  for(let n = from; n <= to; n++) out.push(n);
+  return out;
 }
 
-function renderCategoryTabs(){
-  const wrap = document.getElementById('betCategoryTabs');
-  const cats = [{key:'outside', label:'Esterne'}, {key:'straight', label:'Numero'}, {key:'split', label:'Coppia'}];
-  wrap.innerHTML = '';
-  cats.forEach(c => {
-    const btn = document.createElement('button');
-    btn.className = 'bet-category-tab' + (betCategory === c.key ? ' active' : '');
-    btn.textContent = c.label;
-    btn.onclick = () => switchBetCategory(c.key);
-    wrap.appendChild(btn);
-  });
+/* payout in stile "quota totale": la vincita netta e' importo * (payout - 1) */
+const RL_OUTSIDE = {
+  red:    { label:'Rosso',              payout:2, numbers:RED_NUMBERS.slice() },
+  black:  { label:'Nero',               payout:2, numbers:rlRange(1,36).filter(n => !RED_NUMBERS.includes(n)) },
+  even:   { label:'Pari',               payout:2, numbers:rlRange(1,36).filter(n => n % 2 === 0) },
+  odd:    { label:'Dispari',            payout:2, numbers:rlRange(1,36).filter(n => n % 2 === 1) },
+  low:    { label:'Manque 1-18',        payout:2, numbers:rlRange(1,18) },
+  high:   { label:'Passe 19-36',        payout:2, numbers:rlRange(19,36) },
+  dozen1: { label:'1a dozzina 1-12',    payout:3, numbers:rlRange(1,12) },
+  dozen2: { label:'2a dozzina 13-24',   payout:3, numbers:rlRange(13,24) },
+  dozen3: { label:'3a dozzina 25-36',   payout:3, numbers:rlRange(25,36) },
+  col1:   { label:'Colonna 1-34',       payout:3, numbers:RL_ROWS[2].slice() },
+  col2:   { label:'Colonna 2-35',       payout:3, numbers:RL_ROWS[1].slice() },
+  col3:   { label:'Colonna 3-36',       payout:3, numbers:RL_ROWS[0].slice() }
+};
+
+const RL_COMBOS = {
+  split:  { label:'Coppia',  count:2, payout:18 },
+  street: { label:'Terzina', count:3, payout:12 },
+  corner: { label:'Angolo',  count:4, payout:9  },
+  line:   { label:'Sestina', count:6, payout:6  }
+};
+
+const RL_RED_BLACK_MSG = 'Non puoi puntare su entrambi rosso e nero nello stesso giro.';
+
+/* posizione sul tabellone: riga 0 = 3,6,9... riga 2 = 1,4,7... */
+function rlPos(n){
+  if(n < 1 || n > 36) return null;
+  const c = Math.ceil(n / 3) - 1;
+  return { r: 3 - (n - c * 3), c: c };
 }
 
-function renderOutsideGrid(){
-  const grid = document.getElementById('outsideGrid');
-  grid.innerHTML = '';
-  OUTSIDE_BETS.forEach(b => {
-    const btn = document.createElement('button');
-    btn.className = 'bet-type' + (b.key === selectedOutsideKey ? ' selected' : '');
-    if(b.key === selectedOutsideKey) btn.style.borderColor = '#A83232';
-    const dotColor = b.key === 'red' ? '#A83232' : b.key === 'black' ? '#161616' : null;
-    btn.innerHTML = `
-      ${dotColor ? `<div class="bet-type-dot" style="background:${dotColor}"></div>` : ''}
-      <p class="bet-type-name">${b.label}</p>
-      <p class="bet-type-payout">vincita x${b.payout}</p>
-    `;
-    btn.onclick = () => { selectedOutsideKey = b.key; renderOutsideGrid(); updatePotentialWin(); };
-    grid.appendChild(btn);
-  });
+function rlValidCombo(mode, nums){
+  const cfg = RL_COMBOS[mode];
+  if(!cfg || nums.length !== cfg.count) return false;
+  const sorted = nums.slice().sort((a, b) => a - b);
+  if(mode === 'split'){
+    if(sorted[0] === 0) return [1,2,3].includes(sorted[1]);
+    const a = rlPos(sorted[0]);
+    const b = rlPos(sorted[1]);
+    if(!a || !b) return false;
+    return (a.r === b.r && Math.abs(a.c - b.c) === 1) || (a.c === b.c && Math.abs(a.r - b.r) === 1);
+  }
+  if(sorted.includes(0)) return false;
+  const cols = [...new Set(sorted.map(n => rlPos(n).c))].sort((a, b) => a - b);
+  const rows = [...new Set(sorted.map(n => rlPos(n).r))].sort((a, b) => a - b);
+  if(mode === 'street') return cols.length === 1 && rows.length === 3;
+  if(mode === 'corner') return cols.length === 2 && rows.length === 2 && cols[1] - cols[0] === 1 && rows[1] - rows[0] === 1;
+  if(mode === 'line')   return cols.length === 2 && rows.length === 3 && cols[1] - cols[0] === 1;
+  return false;
 }
 
-function buildNumberGridHTML(containerId, mode){
-  const grid = document.getElementById(containerId);
-  grid.innerHTML = '';
-
-  const zero = document.createElement('div');
-  zero.className = 'number-cell green' + (selectedNumbers.includes(0) && betCategory === mode ? ' selected' : '');
-  zero.textContent = '0';
-  zero.onclick = () => { pickNumber(0, mode); };
-  grid.appendChild(zero);
-
-  NUMBER_GRID_ROWS.forEach(row => {
-    row.forEach(n => {
-      const cell = document.createElement('div');
-      cell.className = `number-cell ${numberColor(n)}` + (selectedNumbers.includes(n) && betCategory === mode ? ' selected' : '');
-      cell.textContent = n;
-      cell.onclick = () => { pickNumber(n, mode); };
-      grid.appendChild(cell);
-    });
-  });
+function rlTotalStaked(){
+  return rouletteBets.reduce((sum, b) => sum + b.amount, 0);
+}
+function rlFindBet(key){
+  return rouletteBets.find(b => b.key === key) || null;
+}
+/* fiches ancora libere, escludendo la puntata che si sta modificando */
+function rlRemainingStack(excludeKey){
+  const busy = rouletteBets.reduce((sum, b) => sum + (b.key === excludeKey ? 0 : b.amount), 0);
+  return Math.max(0, getSessionStack('roulette') - busy);
+}
+/* quanto renderebbe in totale il numero n con le puntate attuali */
+function rlGrossFor(n){
+  return rouletteBets.reduce((sum, b) => sum + (b.numbers.includes(n) ? b.amount * b.payout : 0), 0);
 }
 
-function pickNumber(n, mode){
-  if(mode === 'straight'){
-    selectedNumbers = [n];
-  } else {
-    if(selectedNumbers.includes(n)){
-      selectedNumbers = selectedNumbers.filter(x => x !== n);
-    } else {
-      if(selectedNumbers.length >= 2) selectedNumbers.shift();
-      selectedNumbers.push(n);
+function rlHint(msg, isError){
+  const el = document.getElementById('rlHint');
+  if(!el) return;
+  el.textContent = msg;
+  el.className = 'rl-hint' + (isError ? ' err' : '');
+}
+
+function rlPromptBet(bet){
+  if(spinning) return;
+  if(!hasSession('roulette')){
+    promptGameBuyIn('roulette');
+    return;
+  }
+  const existing = rlFindBet(bet.key);
+  const max = rlRemainingStack(bet.key);
+  if(max <= 0){
+    rlHint('Fiches esaurite: cancella o riduci una puntata per piazzarne un\u2019altra.', true);
+    return;
+  }
+  openAmountPad({
+    title: bet.label,
+    sub: `Paga x${bet.payout} \u00b7 fiches libere \u20ac${formatEUR(max)}`,
+    max: max,
+    initial: existing ? existing.amount : 0,
+    overMsg: 'Puntata oltre le fiches disponibili',
+    confirmLabel: existing ? 'Aggiorna puntata' : 'Piazza la puntata',
+    onConfirm: amount => {
+      if(existing){
+        existing.amount = amount;
+      } else {
+        rouletteBets.push({
+          id: 'rb' + (++rlBetSeq),
+          key: bet.key,
+          label: bet.label,
+          payout: bet.payout,
+          numbers: bet.numbers.slice(),
+          amount: amount
+        });
+      }
+      rlRenderBets();
+      rlHint(`${bet.label}: \u20ac${formatEUR(amount)} sul tavolo.`);
     }
-  }
-  buildNumberGridHTML('straightGrid', 'straight');
-  buildNumberGridHTML('splitGrid', 'split');
-  updatePotentialWin();
-}
-
-function currentBetInfo(){
-  if(betCategory === 'outside'){
-    const b = OUTSIDE_BETS.find(x => x.key === selectedOutsideKey);
-    return {valid: !!b, payout: b ? b.payout : 0, label: b ? b.label : '', wins: n => outsideBetWins(selectedOutsideKey, n)};
-  }
-  if(betCategory === 'straight'){
-    return {valid: selectedNumbers.length === 1, payout: 36, label: selectedNumbers.length ? `Numero ${selectedNumbers[0]}` : '', wins: n => n === selectedNumbers[0]};
-  }
-  return {valid: selectedNumbers.length === 2, payout: 18, label: selectedNumbers.length === 2 ? `Coppia ${selectedNumbers[0]}-${selectedNumbers[1]}` : '', wins: n => selectedNumbers.includes(n)};
-}
-
-function renderBetPresetGrid(){
-  renderBetLevelTabs('roulette');
-  const grid = document.getElementById('betPresetGrid');
-  grid.innerHTML = '';
-  const current = parseFloat(document.getElementById('betInput').value);
-  BET_LEVELS[betAmountLevel.roulette].forEach(p => {
-    const btn = document.createElement('button');
-    btn.className = 'preset-chip' + (current === p ? ' selected' : '');
-    btn.textContent = '€' + p;
-    btn.onclick = () => {
-      document.getElementById('betInput').value = p;
-      renderBetPresetGrid();
-      updatePotentialWin();
-    };
-    grid.appendChild(btn);
   });
 }
 
-function stepBet(delta){
-  const input = document.getElementById('betInput');
-  let val = parseFloat(input.value) || 0;
-  val = Math.max(1, val + delta);
-  input.value = val;
-  renderBetPresetGrid();
-  updatePotentialWin();
+function rlClickOutside(key){
+  if(spinning) return;
+  const cfg = RL_OUTSIDE[key];
+  if(!cfg) return;
+  if(key === 'red' && rlFindBet('black')){ rlHint(RL_RED_BLACK_MSG, true); return; }
+  if(key === 'black' && rlFindBet('red')){ rlHint(RL_RED_BLACK_MSG, true); return; }
+  rlPromptBet({ key: key, label: cfg.label, payout: cfg.payout, numbers: cfg.numbers });
 }
 
-function updatePotentialWin(){
-  const bet = parseFloat(document.getElementById('betInput').value) || 0;
-  const info = currentBetInfo();
-  const win = info.valid ? bet * (info.payout - 1) : 0;
-  document.getElementById('potentialWin').innerHTML = `Vincita potenziale: <b>+€${formatEUR(win)}</b>`;
-  document.getElementById('spinBtn').disabled = !info.valid || bet <= 0;
+function rlClickNumber(n){
+  if(spinning) return;
+  if(!rlComboMode){
+    rlPromptBet({ key: 'straight:' + n, label: 'Numero ' + n, payout: 36, numbers: [n] });
+    return;
+  }
+  const cfg = RL_COMBOS[rlComboMode];
+  const at = rlComboPick.indexOf(n);
+  if(at >= 0){
+    rlComboPick.splice(at, 1);
+  } else {
+    if(rlComboPick.length >= cfg.count) rlComboPick.shift();
+    rlComboPick.push(n);
+  }
+  rlRenderBoard();
+  if(rlComboPick.length < cfg.count){
+    const left = cfg.count - rlComboPick.length;
+    rlHint(`${cfg.label}: seleziona ancora ${left} numer${left === 1 ? 'o' : 'i'}.`);
+    return;
+  }
+  if(!rlValidCombo(rlComboMode, rlComboPick)){
+    rlHint(`Questi numeri non formano una ${cfg.label.toLowerCase()} valida sul tabellone.`, true);
+    return;
+  }
+  const nums = rlComboPick.slice().sort((a, b) => a - b);
+  rlComboMode = null;
+  rlComboPick = [];
+  rlRenderComboRow();
+  rlRenderBoard();
+  rlPromptBet({ key: 'combo:' + nums.join('-'), label: `${cfg.label} ${nums.join('-')}`, payout: cfg.payout, numbers: nums });
+}
+
+function rlSetComboMode(mode){
+  if(spinning) return;
+  rlComboMode = mode;
+  rlComboPick = [];
+  rlRenderComboRow();
+  rlRenderBoard();
+  if(mode) rlHint(`${RL_COMBOS[mode].label}: tocca ${RL_COMBOS[mode].count} numeri vicini sul tabellone.`);
+  else rlHint('Tocca un numero o una casella per piazzare la puntata.');
+}
+
+function rlRenderComboRow(){
+  const row = document.getElementById('rlComboRow');
+  if(!row) return;
+  row.innerHTML = '';
+  Object.keys(RL_COMBOS).forEach(key => {
+    const cfg = RL_COMBOS[key];
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'rl-combo-btn' + (rlComboMode === key ? ' on' : '');
+    btn.textContent = `${cfg.label} x${cfg.payout}`;
+    btn.onclick = () => rlSetComboMode(rlComboMode === key ? null : key);
+    row.appendChild(btn);
+  });
+}
+
+function rlCellEl(cls, text, onClick){
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'rl-cell ' + cls;
+  btn.textContent = text;
+  if(onClick) btn.onclick = onClick;
+  return btn;
+}
+
+/* mostra la fiche con l'importo sulle caselle puntate e le selezioni in corso */
+function rlDecorate(el, key, number){
+  const bet = rlFindBet(key);
+  if(bet){
+    el.classList.add('staked');
+    const chip = document.createElement('span');
+    chip.className = 'rl-chip';
+    chip.textContent = formatEUR(bet.amount).replace(',00', '');
+    el.appendChild(chip);
+  }
+  if(number === null || number === undefined) return;
+  if(rlComboMode && rlComboPick.includes(number)) el.classList.add('picked');
+  else if(rouletteBets.some(b => b.numbers.length > 1 && b.numbers.length <= 6 && b.numbers.includes(number))) el.classList.add('incombo');
+}
+
+function rlRenderBoard(){
+  const board = document.getElementById('rlBoard');
+  if(!board) return;
+  board.innerHTML = '';
+
+  const zero = rlCellEl('green', '0', () => rlClickNumber(0));
+  rlDecorate(zero, 'straight:0', 0);
+  board.appendChild(zero);
+
+  RL_ROWS.forEach((row, r) => {
+    row.forEach(n => {
+      const cell = rlCellEl(numberColor(n), String(n), () => rlClickNumber(n));
+      cell.style.gridRow = String(r + 1);
+      cell.style.gridColumn = String(rlPos(n).c + 2);
+      rlDecorate(cell, 'straight:' + n, n);
+      board.appendChild(cell);
+    });
+    const colKey = r === 0 ? 'col3' : (r === 1 ? 'col2' : 'col1');
+    const colCell = rlCellEl('col', '2:1', () => rlClickOutside(colKey));
+    colCell.style.gridRow = String(r + 1);
+    rlDecorate(colCell, colKey, null);
+    board.appendChild(colCell);
+  });
+
+  ['dozen1', 'dozen2', 'dozen3'].forEach((key, i) => {
+    const cell = rlCellEl('out dz', ['1-12', '13-24', '25-36'][i], () => rlClickOutside(key));
+    cell.style.gridColumn = (2 + i * 4) + ' / span 4';
+    rlDecorate(cell, key, null);
+    board.appendChild(cell);
+  });
+
+  [['low', '1-18'], ['even', 'PARI'], ['red', 'ROSSO'], ['black', 'NERO'], ['odd', 'DISPARI'], ['high', '19-36']]
+    .forEach(([key, text], i) => {
+      const swatch = key === 'red' ? ' swatch-red' : (key === 'black' ? ' swatch-black' : '');
+      const cell = rlCellEl('out ev' + swatch, text, () => rlClickOutside(key));
+      cell.style.gridColumn = (2 + i * 2) + ' / span 2';
+      rlDecorate(cell, key, null);
+      board.appendChild(cell);
+    });
+
+  board.classList.toggle('locked', !!spinning);
+}
+
+function rlRemoveBet(id){
+  rouletteBets = rouletteBets.filter(b => b.id !== id);
+  rlRenderBets();
+  rlHint('Puntata cancellata.');
+}
+
+function rlClearBets(){
+  rouletteBets = [];
+  rlComboMode = null;
+  rlComboPick = [];
+  rlRenderComboRow();
+  rlRenderBets();
+  rlHint('Tabellone pulito. Tocca un numero o una casella per puntare.');
+}
+
+function rlRenderBets(){
+  const list = document.getElementById('rlBetsList');
+  if(!list) return;
+  const total = rlTotalStaked();
+  const countEl = document.getElementById('rlBetsCount');
+  const totalEl = document.getElementById('rlBetsTotal');
+  const clearBtn = document.getElementById('rlClearBtn');
+  if(countEl) countEl.textContent = rouletteBets.length;
+  if(totalEl) totalEl.textContent = '\u20ac' + formatEUR(total);
+  if(clearBtn) clearBtn.style.display = rouletteBets.length ? 'block' : 'none';
+
+  list.innerHTML = '';
+  rouletteBets.forEach(bet => {
+    const row = document.createElement('div');
+    row.className = 'rl-bet-row';
+
+    const main = document.createElement('button');
+    main.type = 'button';
+    main.className = 'rl-bet-main';
+    main.innerHTML = `<p class="rl-bet-label">${escapeText(bet.label)}</p><p class="rl-bet-meta">paga x${bet.payout} \u00b7 tocca per modificare</p>`;
+    main.onclick = () => rlPromptBet(bet);
+
+    const amount = document.createElement('span');
+    amount.className = 'rl-bet-amount';
+    amount.textContent = '\u20ac' + formatEUR(bet.amount);
+
+    const del = document.createElement('button');
+    del.type = 'button';
+    del.className = 'rl-bet-del';
+    del.innerHTML = '<i class="ti ti-trash"></i>';
+    del.setAttribute('aria-label', 'Cancella puntata');
+    del.onclick = () => rlRemoveBet(bet.id);
+
+    row.appendChild(main);
+    row.appendChild(amount);
+    row.appendChild(del);
+    list.appendChild(row);
+  });
+
+  const spinBtn = document.getElementById('spinBtn');
+  if(spinBtn) spinBtn.disabled = !!spinning || !rouletteBets.length || total > getSessionStack('roulette');
+  rlRenderBoard();
 }
 
 function spinRoulette(){
   if(spinning) return;
   if(!hasSession('roulette')){
-    const bar = document.getElementById('rouletteBuyinBar');
-    bar.classList.add('shake');
-    setTimeout(()=>bar.classList.remove('shake'), 300);
+    promptGameBuyIn('roulette');
     return;
   }
-  const bet = parseFloat(document.getElementById('betInput').value) || 0;
-  const info = currentBetInfo();
-
-  if(!info.valid || bet <= 0) return;
-  if(bet > getSessionStack('roulette')){
-    const input = document.getElementById('betInput');
-    input.parentElement.classList.add('shake');
-    setTimeout(()=>input.parentElement.classList.remove('shake'), 300);
+  if(!rouletteBets.length){
+    rlHint('Piazza almeno una puntata prima di girare.', true);
+    return;
+  }
+  const total = rlTotalStaked();
+  const stack = getSessionStack('roulette');
+  if(total > stack){
+    rlHint(`Le puntate (\u20ac${formatEUR(total)}) superano il tuo stack (\u20ac${formatEUR(stack)}).`, true);
     return;
   }
 
   spinning = true;
-  document.getElementById('spinBtn').disabled = true;
+  rlComboMode = null;
+  rlComboPick = [];
+  rlRenderComboRow();
+  rlRenderBoard();
+  const spinBtn = document.getElementById('spinBtn');
+  if(spinBtn) spinBtn.disabled = true;
   document.getElementById('rouletteResult').style.display = 'none';
+  rlHint('La ruota gira\u2026');
 
-  let idx;
+  /* estrazione: con la fortuna attiva si sceglie la casella che paga di piu' tra quelle vincenti */
+  let idx = Math.floor(Math.random() * WHEEL_ORDER.length);
   if(rollLucky('roulette')){
-    const winningIdxs = [];
-    WHEEL_ORDER.forEach((n,i) => { if(info.wins(n)) winningIdxs.push(i); });
-    idx = winningIdxs.length ? winningIdxs[Math.floor(Math.random()*winningIdxs.length)] : Math.floor(Math.random()*WHEEL_ORDER.length);
-  } else {
-    idx = Math.floor(Math.random() * WHEEL_ORDER.length);
+    let best = 0;
+    let bestIdx = [];
+    WHEEL_ORDER.forEach((n, i) => {
+      const gross = rlGrossFor(n);
+      if(gross > best){ best = gross; bestIdx = [i]; }
+      else if(gross === best && best > 0) bestIdx.push(i);
+    });
+    if(bestIdx.length) idx = bestIdx[Math.floor(Math.random() * bestIdx.length)];
   }
   const resultNumber = WHEEL_ORDER[idx];
   const color = numberColor(resultNumber);
 
-  const segAngle = 360/WHEEL_ORDER.length;
-  const originalAngle = idx*segAngle + segAngle/2;
-  const targetAngleMod = (360 - originalAngle + 360) % 360;
+  /* la casella estratta si ferma sotto il puntatore in alto... */
+  const segAngle = 360 / WHEEL_ORDER.length;
+  const pocketAngle = idx * segAngle + segAngle / 2;
+  const targetAngleMod = (360 - pocketAngle) % 360;
   const delta = ((targetAngleMod - rouletteModRotation) + 360) % 360;
-  const extraSpins = 6*360;
-
-  rouletteAbsRotation += extraSpins + delta;
+  rouletteAbsRotation += 6 * 360 + delta;
   rouletteModRotation = targetAngleMod;
   document.getElementById('rouletteWheel').style.transform = `rotate(${rouletteAbsRotation}deg)`;
 
-  /* la pallina gira in senso opposto e piu' velocemente, poi si assesta */
-  rouletteBallRotation -= (5*360 + Math.floor(Math.random()*360));
+  /* ...e la pallina si posa esattamente nella stessa casella: gira in senso opposto
+     e chiude sempre su un multiplo di 360, cioe' allineata al puntatore.
+     Prima cadeva su un angolo casuale e mostrava un numero diverso da quello uscito. */
+  rouletteBallRotation = Math.round(rouletteBallRotation / 360) * 360 - 5 * 360;
   document.getElementById('rouletteBallOrbit').style.transform = `rotate(${rouletteBallRotation}deg)`;
 
-  setTimeout(()=>{
-    const win = info.wins(resultNumber);
-    const betLabel = info.label;
+  setTimeout(() => {
+    const gross = rlGrossFor(resultNumber);
+    const net = gross - total;
+    const winners = rouletteBets.filter(b => b.numbers.includes(resultNumber));
 
     const resultEl = document.getElementById('rouletteResult');
     const numberEl = document.getElementById('rouletteResultNumber');
     const outcomeEl = document.getElementById('rouletteResultOutcome');
+    numberEl.textContent = `${resultNumber} \u2014 ${colorLabel(color)}`;
+    const winLabel = winners.length === 1 ? '1 puntata vincente' : `${winners.length} puntate vincenti`;
 
-    numberEl.textContent = `${resultNumber} — ${colorLabel(color)}`;
-
-    if(win){
-      const net = bet * (info.payout - 1);
-      outcomeEl.textContent = `Hai vinto +€${formatEUR(net)}`;
+    if(net > 0){
+      outcomeEl.textContent = `${winLabel}: hai vinto +\u20ac${formatEUR(net)}`;
       resultEl.className = 'roulette-result win';
       applyToSession('roulette', net, 'in');
-      recordGameResult('roulette', net, bet);
-      croupierSay(net > bet*5 ? 'bigwin' : 'win');
-    } else {
-      outcomeEl.textContent = `Hai perso €${formatEUR(bet)}`;
+      croupierSay(net > total * 5 ? 'bigwin' : 'win');
+    } else if(net < 0){
+      outcomeEl.textContent = winners.length
+        ? `${winLabel}: recuperi \u20ac${formatEUR(gross)} su \u20ac${formatEUR(total)}, perdi \u20ac${formatEUR(-net)}`
+        : `Nessuna puntata vincente: perdi \u20ac${formatEUR(total)}`;
       resultEl.className = 'roulette-result lose';
-      applyToSession('roulette', bet, 'out');
-      recordGameResult('roulette', -bet, bet);
+      applyToSession('roulette', -net, 'out');
       croupierSay('lose');
+    } else {
+      outcomeEl.textContent = `${winLabel}: vai in pari, recuperi \u20ac${formatEUR(total)}`;
+      resultEl.className = 'roulette-result win';
+      croupierSay('win');
     }
+    recordGameResult('roulette', net, total);
     resultEl.style.display = 'block';
 
     spinning = false;
-    updatePotentialWin();
+    rlHint('Puoi cambiare le puntate e girare di nuovo.');
+    rlRenderBets();
   }, 3450);
 }
 
@@ -9679,48 +9942,7 @@ function renderCardEl(card, faceDown){
   return div;
 }
 
-function renderPokerBuyinPreset(){
-  renderBetLevelTabs('pokerBuyin');
-  const grid = document.getElementById('pokerBuyinPresetGrid');
-  grid.innerHTML = '';
-  const current = parseFloat(document.getElementById('pokerBuyinInput').value);
-  BET_LEVELS[betAmountLevel.pokerBuyin].forEach(p => {
-    const btn = document.createElement('button');
-    btn.className = 'preset-chip' + (current === p ? ' selected' : '');
-    btn.textContent = '€' + p;
-    btn.onclick = () => { document.getElementById('pokerBuyinInput').value = p; renderPokerBuyinPreset(); };
-    grid.appendChild(btn);
-  });
-}
-function stepPokerBuyin(delta){
-  const input = document.getElementById('pokerBuyinInput');
-  let v = parseFloat(input.value) || 0;
-  v = Math.max(1, v + delta);
-  input.value = v;
-  renderPokerBuyinPreset();
-}
 
-function renderPokerBetPreset(){
-  renderBetLevelTabs('pokerBet');
-  const grid = document.getElementById('pokerBetPresetGrid');
-  grid.innerHTML = '';
-  const current = parseFloat(document.getElementById('pokerBetInput').value);
-  BET_LEVELS[betAmountLevel.pokerBet].forEach(p => {
-    const btn = document.createElement('button');
-    btn.className = 'preset-chip' + (current === p ? ' selected' : '');
-    btn.textContent = '€' + p;
-    btn.onclick = () => { document.getElementById('pokerBetInput').value = p; renderPokerBetPreset(); };
-    grid.appendChild(btn);
-  });
-}
-function stepPokerBet(delta){
-  const input = document.getElementById('pokerBetInput');
-  let v = parseFloat(input.value) || 0;
-  v = Math.max(1, v + delta);
-  const human = poker ? poker.players[0] : null;
-  input.value = human ? Math.min(v, human.stack - human.committed) : v;
-  renderPokerBetPreset();
-}
 
 function startPokerHand(){
   const numOpponents = pokerMode === 'cpu' ? 1 : pokerBotCount;
@@ -9728,21 +9950,9 @@ function startPokerHand(){
   let humanStack, tableBuyIn;
 
   if(!hasSession('poker')){
-    const acc = getAccount(currentAccountId);
-    const buyIn = parseFloat(document.getElementById('pokerBuyinInput').value) || 0;
-    if(buyIn <= 0) return;
-    if(buyIn > acc.balance){
-      const wrap = document.getElementById('pokerSetup');
-      wrap.classList.add('shake');
-      setTimeout(()=>wrap.classList.remove('shake'), 300);
-      return;
-    }
-    applyTransaction(acc, buyIn, 'out', `${GAME_LABELS.poker}: entra al tavolo con €${formatEUR(buyIn)}`);
-    startSession('poker', buyIn);
-    gameSessions.poker.tableBuyIn = buyIn;
-    saveState();
-    humanStack = buyIn;
-    tableBuyIn = buyIn;
+    /* senza fiches al tavolo si passa dal tastierino del buy-in, poi si riparte */
+    promptGameBuyIn('poker', () => startPokerHand());
+    return;
   } else {
     humanStack = getSessionStack('poker');
     tableBuyIn = gameSessions.poker.tableBuyIn || humanStack;
@@ -9969,36 +10179,55 @@ function showPokerActions(mode, callAmt){
   const wrap = document.getElementById('pokerActions');
   const betWrap = document.getElementById('pokerBetWrap');
   wrap.innerHTML = '';
-  betWrap.style.display = 'none';
+  if(betWrap) betWrap.style.display = 'none';
+  if(typeof pkDisarm === 'function') pkDisarm('');
+
+  const addBtn = (cls, label, fn) => {
+    const btn = document.createElement('button');
+    btn.className = 'poker-action-btn ' + cls;
+    btn.textContent = label;
+    btn.onclick = fn;
+    wrap.appendChild(btn);
+    return btn;
+  };
 
   if(mode === 'open'){
-    document.getElementById('pokerStatus').textContent = 'Doppio tocco sulle carte per check, oppure impila le fiches e trascina in alto per puntare.';
-    wrap.innerHTML = '<span class="pk-gesture-note"><i class="ti ti-hand-click"></i> doppio tocco: check</span>';
-    pkArm('bet', 0);
+    document.getElementById('pokerStatus').textContent = 'Tocca a te: check oppure fai la tua puntata.';
+    addBtn('check', 'Check', () => playerCheck());
+    addBtn('bet', 'Punta', () => openPokerBetInput('bet'));
   } else if(mode === 'facing'){
-    document.getElementById('pokerStatus').textContent = `Per pareggiare servono \u20ac${formatEUR(callAmt)}. Call, oppure impila il rilancio e trascina in alto.`;
-    const call = document.createElement('button');
-    call.className = 'poker-action-btn call solo';
-    call.textContent = `Call \u20ac${formatEUR(callAmt)}`;
-    call.onclick = () => playerCall();
-    wrap.appendChild(call);
-    pkArm('raise', callAmt);
+    document.getElementById('pokerStatus').textContent = `Per pareggiare servono \u20ac${formatEUR(callAmt)}. Cosa fai?`;
+    addBtn('fold', 'Fold', () => playerFold());
+    addBtn('call', `Call \u20ac${formatEUR(callAmt)}`, () => playerCall());
+    addBtn('raise', 'Rilancia', () => openPokerBetInput('raise'));
   } else if(mode === 'final'){
     document.getElementById('pokerStatus').textContent = `Ultimo rilancio consentito raggiunto. Per pareggiare servono \u20ac${formatEUR(callAmt)}.`;
-    const call = document.createElement('button');
-    call.className = 'poker-action-btn call solo';
-    call.textContent = `Call \u20ac${formatEUR(callAmt)}`;
-    call.onclick = () => playerCall();
-    wrap.appendChild(call);
-    pkDisarm('Rilanci esauriti per questo giro: puoi pagare o scorrere le carte verso l’alto per foldare.');
+    addBtn('fold', 'Fold', () => playerFold());
+    addBtn('call', `Call \u20ac${formatEUR(callAmt)}`, () => playerCall());
   }
 }
 
+/* puntata/rilancio del giocatore: importo libero dal tastierino, mai oltre le fiches */
 function openPokerBetInput(kind){
-  /* il tastierino non serve piu': la puntata si costruisce con le fiches e si lancia con lo swipe */
   if(!poker) return;
   const human = poker.players[0];
-  pkArm(kind === 'raise' ? 'raise' : 'bet', Math.max(0, poker.currentBet - human.streetCommitted));
+  const callAmt = Math.max(0, poker.currentBet - human.streetCommitted);
+  const maxAdd = Math.max(0, human.stack - human.committed);
+  const isRaise = kind === 'raise';
+  const betWrap = document.getElementById('pokerBetWrap');
+  if(betWrap) betWrap.dataset.kind = isRaise ? 'raise' : 'bet';
+  promptGameBet('poker', {
+    inputId: 'pokerBetInput',
+    max: isRaise ? Math.max(0, maxAdd - callAmt) : maxAdd,
+    title: isRaise ? 'Di quanto rilanci?' : 'Fai la tua puntata',
+    sub: isRaise
+      ? `Chiamata \u20ac${formatEUR(callAmt)} \u00b7 fiches disponibili \u20ac${formatEUR(maxAdd)}`
+      : `Fiches disponibili: \u20ac${formatEUR(maxAdd)}`,
+    overMsg: 'Importo oltre le fiches disponibili',
+    confirmLabel: isRaise ? 'Rilancia' : 'Punta',
+    then: () => confirmPokerBet(),
+    onCancel: () => playerTurnUI()
+  });
 }
 
 function confirmPokerBet(){
@@ -10270,7 +10499,6 @@ function resetPokerTable(){
   document.getElementById('pokerTable').style.display = 'none';
   document.getElementById('pokerSetup').style.display = 'block';
   renderPokerModeUI();
-  renderPokerBuyinPreset();
   updatePokerStackBar();
 }
 
@@ -10334,48 +10562,7 @@ function setDraw5Mode(m){ draw5Mode = m; renderDraw5ModeUI(); }
 function setDraw5BotCount(n){ draw5BotCount = n; renderDraw5ModeUI(); }
 function setDraw5Difficulty(level){ draw5Difficulty = level; renderDraw5ModeUI(); }
 
-function renderDraw5BuyinPreset(){
-  renderBetLevelTabs('draw5Buyin');
-  const grid = document.getElementById('draw5BuyinPresetGrid');
-  grid.innerHTML = '';
-  const current = parseFloat(document.getElementById('draw5BuyinInput').value);
-  BET_LEVELS[betAmountLevel.draw5Buyin].forEach(p => {
-    const btn = document.createElement('button');
-    btn.className = 'preset-chip' + (current === p ? ' selected' : '');
-    btn.textContent = '€' + p;
-    btn.onclick = () => { document.getElementById('draw5BuyinInput').value = p; renderDraw5BuyinPreset(); };
-    grid.appendChild(btn);
-  });
-}
-function stepDraw5Buyin(delta){
-  const input = document.getElementById('draw5BuyinInput');
-  let v = parseFloat(input.value) || 0;
-  v = Math.max(1, v + delta);
-  input.value = v;
-  renderDraw5BuyinPreset();
-}
 
-function renderDraw5BetPreset(){
-  renderBetLevelTabs('draw5Bet');
-  const grid = document.getElementById('draw5BetPresetGrid');
-  grid.innerHTML = '';
-  const current = parseFloat(document.getElementById('draw5BetInput').value);
-  BET_LEVELS[betAmountLevel.draw5Bet].forEach(p => {
-    const btn = document.createElement('button');
-    btn.className = 'preset-chip' + (current === p ? ' selected' : '');
-    btn.textContent = '€' + p;
-    btn.onclick = () => { document.getElementById('draw5BetInput').value = p; renderDraw5BetPreset(); };
-    grid.appendChild(btn);
-  });
-}
-function stepDraw5Bet(delta){
-  const input = document.getElementById('draw5BetInput');
-  let v = parseFloat(input.value) || 0;
-  v = Math.max(1, v + delta);
-  const human = draw5 ? draw5.players[0] : null;
-  input.value = human ? Math.min(v, human.stack - human.committed) : v;
-  renderDraw5BetPreset();
-}
 
 /* ---------- mazzo fortunato per il cambio carte: le carte pescate completano una mano forte a partire da quelle tenute ---------- */
 function draw5PickReplacement(heldCards, needCount, usedKeys){
@@ -10534,21 +10721,9 @@ function startDraw5Hand(){
   let humanStack, tableBuyIn;
 
   if(!hasSession('draw5')){
-    const acc = getAccount(currentAccountId);
-    const buyIn = parseFloat(document.getElementById('draw5BuyinInput').value) || 0;
-    if(buyIn <= 0) return;
-    if(buyIn > acc.balance){
-      const wrap = document.getElementById('draw5Setup');
-      wrap.classList.add('shake');
-      setTimeout(()=>wrap.classList.remove('shake'), 300);
-      return;
-    }
-    applyTransaction(acc, buyIn, 'out', `${GAME_LABELS.draw5}: entra al tavolo con €${formatEUR(buyIn)}`);
-    startSession('draw5', buyIn);
-    gameSessions.draw5.tableBuyIn = buyIn;
-    saveState();
-    humanStack = buyIn;
-    tableBuyIn = buyIn;
+    /* senza fiches al tavolo si passa dal tastierino del buy-in, poi si riparte */
+    promptGameBuyIn('draw5', () => startDraw5Hand());
+    return;
   } else {
     humanStack = getSessionStack('draw5');
     tableBuyIn = gameSessions.draw5.tableBuyIn || humanStack;
@@ -10753,19 +10928,26 @@ function d5ShowActions(mode, callAmt){
 }
 
 function d5OpenBetInput(kind){
+  if(!draw5) return;
   document.getElementById('draw5Actions').innerHTML = '';
-  const betWrap = document.getElementById('draw5BetWrap');
-  betWrap.style.display = 'block';
-  betWrap.dataset.kind = kind;
   const human = draw5.players[0];
-  const maxAdd = human.stack - human.committed;
-  const input = document.getElementById('draw5BetInput');
-  input.value = Math.min(kind === 'raise' ? draw5.bb : 10, maxAdd);
-  input.max = maxAdd;
-  renderDraw5BetPreset();
-  document.getElementById('draw5Status').textContent = kind === 'raise'
-    ? 'Di quanto vuoi rilanciare (oltre alla chiamata)?'
-    : 'Scegli quanto puntare.';
+  const callAmt = Math.max(0, draw5.currentBet - human.streetCommitted);
+  const maxAdd = Math.max(0, human.stack - human.committed);
+  const isRaise = kind === 'raise';
+  const betWrap = document.getElementById('draw5BetWrap');
+  if(betWrap) betWrap.dataset.kind = isRaise ? 'raise' : 'bet';
+  promptGameBet('draw5', {
+    inputId: 'draw5BetInput',
+    max: isRaise ? Math.max(0, maxAdd - callAmt) : maxAdd,
+    title: isRaise ? 'Di quanto rilanci?' : 'Fai la tua puntata',
+    sub: isRaise
+      ? `Chiamata \u20ac${formatEUR(callAmt)} \u00b7 fiches disponibili \u20ac${formatEUR(maxAdd)}`
+      : `Fiches disponibili: \u20ac${formatEUR(maxAdd)}`,
+    overMsg: 'Importo oltre le fiches disponibili',
+    confirmLabel: isRaise ? 'Rilancia' : 'Punta',
+    then: () => confirmDraw5Bet(),
+    onCancel: () => d5PlayerTurnUI()
+  });
 }
 
 function confirmDraw5Bet(){
@@ -11067,7 +11249,6 @@ function resetDraw5Table(){
   document.getElementById('draw5Table').style.display = 'none';
   document.getElementById('draw5Setup').style.display = 'block';
   renderDraw5ModeUI();
-  renderDraw5BuyinPreset();
   updateDraw5StackBar();
 }
 
@@ -11196,33 +11377,11 @@ function evaluateSlotSpin(symbols){
   return { multiplier: 0, reason: 'Nessuna combinazione.' };
 }
 
-function renderSlotsBetPreset(){
-  renderBetLevelTabs('slots');
-  const grid = document.getElementById('slotsBetPresetGrid');
-  grid.innerHTML = '';
-  const current = parseFloat(document.getElementById('slotsBetInput').value);
-  BET_LEVELS[betAmountLevel.slots].forEach(p => {
-    const btn = document.createElement('button');
-    btn.className = 'preset-chip' + (current === p ? ' selected' : '');
-    btn.textContent = '€' + p;
-    btn.onclick = () => { document.getElementById('slotsBetInput').value = p; renderSlotsBetPreset(); };
-    grid.appendChild(btn);
-  });
-}
-function stepSlotsBet(delta){
-  const input = document.getElementById('slotsBetInput');
-  let v = parseFloat(input.value) || 0;
-  v = Math.max(1, v + delta);
-  input.value = v;
-  renderSlotsBetPreset();
-}
 
 function spinSlots(){
   if(slotsSpinning) return;
   if(!hasSession('slots')){
-    const bar = document.getElementById('slotsBuyinBar');
-    bar.classList.add('shake');
-    setTimeout(()=>bar.classList.remove('shake'), 300);
+    promptGameBuyIn('slots');
     return;
   }
   const bet = parseFloat(document.getElementById('slotsBetInput').value) || 0;
@@ -11307,26 +11466,6 @@ function settleSlotsSpin(bet, symbols){
 /* ---------- dadi (craps semplificato, solo scommessa pass line) ---------- */
 let craps = null;
 
-function renderCrapsBetPreset(){
-  renderBetLevelTabs('craps');
-  const grid = document.getElementById('crapsBetPresetGrid');
-  grid.innerHTML = '';
-  const current = parseFloat(document.getElementById('crapsBetInput').value);
-  BET_LEVELS[betAmountLevel.craps].forEach(p => {
-    const btn = document.createElement('button');
-    btn.className = 'preset-chip' + (current === p ? ' selected' : '');
-    btn.textContent = '€' + p;
-    btn.onclick = () => { document.getElementById('crapsBetInput').value = p; renderCrapsBetPreset(); };
-    grid.appendChild(btn);
-  });
-}
-function stepCrapsBet(delta){
-  const input = document.getElementById('crapsBetInput');
-  let v = parseFloat(input.value) || 0;
-  v = Math.max(1, v + delta);
-  input.value = v;
-  renderCrapsBetPreset();
-}
 
 function renderDiePips(el, value){
   const layout = {
@@ -11347,9 +11486,7 @@ function renderDiePips(el, value){
 
 function startCraps(){
   if(!hasSession('craps')){
-    const bar = document.getElementById('crapsBuyinBar');
-    bar.classList.add('shake');
-    setTimeout(()=>bar.classList.remove('shake'), 300);
+    promptGameBuyIn('craps');
     return;
   }
   const bet = parseFloat(document.getElementById('crapsBetInput').value) || 0;
@@ -11462,32 +11599,11 @@ function resetCraps(){
   craps = null;
   document.getElementById('crapsTable').style.display = 'none';
   document.getElementById('crapsSetup').style.display = 'block';
-  renderCrapsBetPreset();
 }
 
 /* ---------- blackjack ---------- */
 let blackjack = null;
 
-function renderBjBetPreset(){
-  renderBetLevelTabs('bj');
-  const grid = document.getElementById('bjBetPresetGrid');
-  grid.innerHTML = '';
-  const current = parseFloat(document.getElementById('bjBetInput').value);
-  BET_LEVELS[betAmountLevel.bj].forEach(p => {
-    const btn = document.createElement('button');
-    btn.className = 'preset-chip' + (current === p ? ' selected' : '');
-    btn.textContent = '€' + p;
-    btn.onclick = () => { document.getElementById('bjBetInput').value = p; renderBjBetPreset(); };
-    grid.appendChild(btn);
-  });
-}
-function stepBjBet(delta){
-  const input = document.getElementById('bjBetInput');
-  let v = parseFloat(input.value) || 0;
-  v = Math.max(1, v + delta);
-  input.value = v;
-  renderBjBetPreset();
-}
 
 function bjCardValue(card){
   if(card.r >= 11 && card.r <= 13) return 10;
@@ -11508,9 +11624,7 @@ function bjIsBlackjack(cards){
 
 function startBlackjack(){
   if(!hasSession('blackjack')){
-    const bar = document.getElementById('blackjackBuyinBar');
-    bar.classList.add('shake');
-    setTimeout(()=>bar.classList.remove('shake'), 300);
+    promptGameBuyIn('blackjack');
     return;
   }
   const bet = parseFloat(document.getElementById('bjBetInput').value) || 0;
@@ -11696,7 +11810,6 @@ function resetBlackjack(){
   blackjack = null;
   document.getElementById('blackjackTable').style.display = 'none';
   document.getElementById('blackjackSetup').style.display = 'block';
-  renderBjBetPreset();
   /* nessun reset del conteggio: si continua con la stessa scarpa */
   renderCardCountingHUD();
 }
@@ -12051,22 +12164,14 @@ renderAccountsStrip();
 renderMain();
 buildWheelGradient();
 buildWheelNumbers();
-renderCategoryTabs();
-renderOutsideGrid();
-buildNumberGridHTML('straightGrid', 'straight');
-buildNumberGridHTML('splitGrid', 'split');
-renderBetPresetGrid();
-updatePotentialWin();
+rlRenderComboRow();
+rlRenderBets();
 renderPokerModeUI();
-renderPokerBuyinPreset();
 renderDraw5ModeUI();
-renderDraw5BuyinPreset();
 renderSlotPaytable();
-renderSlotsBetPreset();
 renderSlotSymbolTile('slotSymbol0', SLOT_SYMBOLS[0]);
 renderSlotSymbolTile('slotSymbol1', SLOT_SYMBOLS[0]);
 renderSlotSymbolTile('slotSymbol2', SLOT_SYMBOLS[0]);
-renderBjBetPreset();
 renderGamesList();
 renderCareer();
 renderEventSettings();
@@ -12075,7 +12180,6 @@ renderCardCountingHUD();
 buildWheelGameGradient();
 buildWheelGameNumbers();
 renderWheelSpotGrid();
-renderWheelBetPreset();
 initLuckSliders();
 switchTab('home');
 initWalletSwipeHandlers();
@@ -12849,55 +12953,6 @@ function pkFxReset(){
 }
 
 
-/* ================= UNIVERSAL CHIP BETTING COMPONENT ================= */
-const UniBet={key:null,kind:null,stack:[],max:0,open:false,drag:null,onConfirm:null};
-const UNI_KEYS=['roulette','pokerBet','craps','bj','wheel','draw5Bet','slots'];
-function uniAmount(){return UniBet.stack.reduce((a,b)=>a+b,0);}
-function uniBalance(){
-  try{const a=getAccount(currentAccountId);return Math.max(0,Number(a?.balance)||0);}catch(e){return 100000;}
-}
-function uniMax(){return Math.max(0,Math.floor(Math.min(uniBalance(),UniBet.max||uniBalance())));}
-function uniChip(v,extra){
-  const el=pkBuildChip(v,extra||'');el.classList.add('uni-chip');return el;
-}
-
-function uniPlaceDock(){
-  const dock=document.getElementById('uniChipDock');
-  const body=document.getElementById('gameBody');
-  if(dock && body && dock.parentElement!==body) body.appendChild(dock);
-}
-
-function uniOpen(key,kind,max){
-  if(!UNI_KEYS.includes(key)) return;
-  UniBet.key=key;UniBet.kind=kind||key;UniBet.max=Math.max(1,Number(max)||uniBalance());UniBet.stack=[];UniBet.open=true;
-  uniPlaceDock();const d=document.getElementById('uniChipDock');if(!d)return;d.classList.add('open');
-  document.getElementById('uniGameLabel').textContent=key==='pokerBet'?(kind==='raise'?'Rilancio':'Puntata'):'Puntata';
-  uniBuildTray();uniRender();uniHint('Tocca una fiche, poi trascina la pila verso il tavolo.');
-}
-function uniBuildTray(){
-  const tray=document.getElementById('uniTray');if(!tray||tray.dataset.built==='1')return;tray.dataset.built='1';
-  PK_CHIP_VALUES.forEach(v=>{const slot=document.createElement('div');slot.className='uni-slot';const c=uniChip(v);const l=document.createElement('span');l.className='uni-label';l.textContent=v>=1000?(v/1000)+'K':v;slot.append(c,l);c.addEventListener('pointerdown',e=>{e.preventDefault();uniAdd(v,c);});tray.appendChild(slot);});
-}
-function uniAdd(v,src){if(!UniBet.open||uniAmount()+v>uniMax())return;UniBet.stack.push(v);src.classList.remove('pk-chip-pop');void src.offsetWidth;src.classList.add('pk-chip-pop');uniRender();}
-function uniRemove(){if(UniBet.stack.length){UniBet.stack.pop();uniRender();}}
-function uniRender(){
-  const host=document.getElementById('uniStackChips'),st=document.getElementById('uniStack'),tot=document.getElementById('uniTotal');if(!host)return;
-  host.innerHTML='';UniBet.stack.forEach((v,i)=>{const c=uniChip(v,'uni-stack-chip');c.style.transform='translate3d('+((pkNoise(i*9)-.5)*4).toFixed(1)+'px,'+(-i*5)+'px,0) rotate('+((pkNoise(i*7)-.5)*12).toFixed(1)+'deg)';c.style.zIndex=10+i;c.classList.add('uni-flight');host.appendChild(c);});
-  st.classList.toggle('empty',!UniBet.stack.length);tot.textContent='€'+formatEUR(uniAmount());
-}
-function uniHint(t){const e=document.getElementById('uniHint');if(e)e.textContent=t;}
-function uniClose(){UniBet.open=false;UniBet.stack=[];document.getElementById('uniChipDock')?.classList.remove('open');}
-function uniSetInput(){const map={rouletteBuyin:'rouletteBuyinInput',roulette:'betInput',pokerBuyin:'pokerBuyinInput',pokerBet:'pokerBetInput',crapsBuyin:'crapsBuyinInput',craps:'crapsBetInput',bjBuyin:'blackjackBuyinInput',bj:'bjBetInput',wheelBuyin:'wheelBuyinInput',wheel:'wheelBetInput',draw5Buyin:'draw5BuyinInput',draw5Bet:'draw5BetInput',slotsBuyin:'slotsBuyinInput',slots:'slotsBetInput'};const i=document.getElementById(map[UniBet.key]);if(i)i.value=uniAmount();return i;}
-function uniBetAction(key,kind,max,callback){uniOpen(key,kind,max);UniBet.onConfirm=callback;}
-function uniConfirm(){if(!UniBet.stack.length){uniHint('Aggiungi almeno una fiche.');return;}const key=UniBet.key;uniSetInput();const cb=UniBet.onConfirm;UniBet.onConfirm=null;UniBet.open=false;document.getElementById('uniChipDock')?.classList.remove('open');if(cb){cb();return;}const fn={rouletteBuyin:()=>sitDownAtTable('roulette'),roulette:()=>spinRoulette(),pokerBuyin:()=>startPokerHand(),pokerBet:()=>confirmPokerBet(),crapsBuyin:()=>sitDownAtTable('craps'),craps:()=>startCraps(),bjBuyin:()=>sitDownAtTable('blackjack'),bj:()=>startBlackjack(),wheelBuyin:()=>sitDownAtTable('wheel'),wheel:()=>spinWheelGame(),draw5Buyin:()=>startDraw5Hand(),draw5Bet:()=>confirmDraw5Bet(),slotsBuyin:()=>sitDownAtTable('slots'),slots:()=>spinSlots()};try{fn[key]?.();}catch(e){console.error(e);}}
-function uniLaunch(dx,dy){const stack=document.getElementById('uniStack');if(!stack||!UniBet.stack.length)return;stack.animate([{transform:'translate3d(0,0,0) rotate(0deg) scale(1)',opacity:1},{transform:'translate3d('+(dx*.35)+'px,'+(dy*.35)+'px,0) rotate(8deg) scale(1.05)',opacity:1},{transform:'translate3d(0,-150px,0) rotate(16deg) scale(.65)',opacity:.1}],{duration:520,easing:'cubic-bezier(.3,.72,.2,1)',fill:'forwards'}).onfinish=()=>{uniConfirm();stack.style.transform='';};}
-function uniInitDrag(){const z=document.getElementById('uniStackZone');if(!z||z.dataset.init==='1')return;z.dataset.init='1';const pt=e=>({x:e.clientX??0,y:e.clientY??0});const down=e=>{if(!UniBet.open||!UniBet.stack.length)return;const p=pt(e);UniBet.drag={x:p.x,y:p.y,dy:0,dx:0};z.setPointerCapture?.(e.pointerId);};const move=e=>{if(!UniBet.drag)return;const p=pt(e);UniBet.drag.dx=p.x-UniBet.drag.x;UniBet.drag.dy=p.y-UniBet.drag.y;z.style.transform='translate3d('+(UniBet.drag.dx*.5)+'px,'+Math.min(20,UniBet.drag.dy)+'px,0) rotate('+(UniBet.drag.dx*.06)+'deg)';if(UniBet.drag.dy<-75){const d=UniBet.drag;UniBet.drag=null;z.style.transform='';uniLaunch(d.dx,d.dy);}if(e.cancelable)e.preventDefault();};const up=()=>{if(!UniBet.drag)return;const d=UniBet.drag;UniBet.drag=null;z.style.transform='';if(d.dy>-75&&Math.abs(d.dy)>8)z.animate([{transform:'translate3d(0,5px,0)'},{transform:'translate3d(0,0,0)'}],{duration:300,easing:'cubic-bezier(.2,1.2,.3,1)'});else if(Math.abs(d.dy)<8)uniRemove();};z.addEventListener('pointerdown',down,{passive:false});z.addEventListener('pointermove',move,{passive:false});z.addEventListener('pointerup',up);z.addEventListener('pointercancel',up);}
-function openBetKeypad(key){if(String(key).endsWith('Buyin'))return legacyOpenBetKeypad(key);uniOpen(key,key,uniBalance());}
-function uniHideLegacy(){document.querySelectorAll('#gamesScreen #betLevelTabs,#gamesScreen #betPresetGrid,#gamesScreen #pokerBetWrap,#gamesScreen #crapsBetLevelTabs,#gamesScreen #crapsBetPresetGrid,#gamesScreen #bjBetLevelTabs,#gamesScreen #bjBetPresetGrid,#gamesScreen #wheelBetLevelTabs,#gamesScreen #wheelBetPresetGrid,#gamesScreen #draw5BetWrap,#gamesScreen #slotsBetLevelTabs,#gamesScreen #slotsBetPresetGrid').forEach(e=>e.classList.add('uni-empty-legacy'));}
-function uniObserve(){uniHideLegacy();uniInitDrag();}const uniClear=document.getElementById('uniClear');if(uniClear)uniClear.onclick=()=>{UniBet.stack=[];uniRender();};
-setInterval(uniObserve,500);setTimeout(uniObserve,0);
-// Texas Hold'em usa lo stesso dock universale, senza duplicare la logica della mano
-if(typeof pkArm==='function'){const pkArmLegacy=pkArm;pkArm=function(kind,callAmt){pkArmLegacy(kind,callAmt);uniOpen('pokerBet',kind,(poker?.players?.[0]?.stack||0)-(poker?.players?.[0]?.committed||0)-(kind==='raise'?callAmt:0));};}
 
 /* ==================== PAGAMENTO CONTACTLESS NFC (simulato) ====================
    Simulazione completa di un pagamento contactless: nessun pagamento reale,
@@ -13435,5 +13490,6 @@ function openContactless(){
 
 </script>
 
-</body>
-</html>
+
+
+</body></html>
